@@ -35,7 +35,7 @@ public class MainController {
         user.setName("Batata");
         user.setEmail("mail@gmail.com");
         user.setPhone("5345345363");
-        userService.saveUserOnMap(user);
+        userService.add(user);
 
         Entertainment entertainment = new Restaurant();
         entertainment.setName("Alho");

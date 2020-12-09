@@ -10,7 +10,7 @@ import javax.persistence.InheritanceType;
 
 @Entity(name = "entertainment")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-//@DiscriminatorColumn(name = "entertainment_type")
+@DiscriminatorColumn(name = "entertainment_type")
 public abstract class Entertainment extends AbstractModel {
 
     private String name;

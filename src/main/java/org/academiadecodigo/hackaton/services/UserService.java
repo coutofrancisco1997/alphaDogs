@@ -6,12 +6,12 @@ import java.util.List;
 
 public interface UserService {
 
-    void saveUserOnMap(User user);
+    void add(User user);
 
-    User getUserOnMap(Integer id);
+    User get(Integer id);
 
-    List<User> getUserList();
+    List<User> list();
 
-    void deleteUserOnMap(Integer id);
+    void delete(Integer id);
 
 }

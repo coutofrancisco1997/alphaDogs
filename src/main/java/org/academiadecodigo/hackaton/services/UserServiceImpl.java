@@ -14,7 +14,7 @@ public class UserServiceImpl implements UserService{
     private Map<Integer, User> userMap = new HashMap<>();
 
     @Override
-    public void saveUserOnMap(User user){
+    public void add(User user){
 
         if (user.getId() == null) {
             user.setId(getNextId());
@@ -24,17 +24,17 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public User getUserOnMap(Integer id){
+    public User get(Integer id){
         return userMap.get(id);
     }
 
     @Override
-    public List<User> getUserList(){
+    public List<User> list(){
         return new ArrayList<>(userMap.values());
     }
 
     @Override
-    public void deleteUserOnMap(Integer id) {
+    public void delete(Integer id) {
         userMap.remove(id);
     }
 
