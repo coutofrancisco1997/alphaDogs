@@ -27,7 +27,7 @@ public class MainController {
     @RequestMapping
     public String home() {
         initializeData();
-        return "redirect:/customer/list";
+        return "redirect:/home";
     }
 
     private void initializeData(){

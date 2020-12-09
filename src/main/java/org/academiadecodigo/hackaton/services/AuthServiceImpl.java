@@ -30,7 +30,7 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public boolean authenticate(Integer id) {
 
-        accessingUser = userService.get(id);
+        accessingUser = userService.getUserOnMap(id);
         return accessingUser != null;
     }
 

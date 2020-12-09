@@ -2,6 +2,7 @@ package org.academiadecodigo.hackaton.persistence.dao.jpa;
 
 import org.academiadecodigo.hackaton.persistence.dao.Dao;
 import org.academiadecodigo.hackaton.persistence.model.Model;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -36,6 +37,7 @@ public abstract class GenericJpaDao<T extends Model> implements Dao<T> {
      *
      * @param em the entity manager to set
      */
+
     public void setEm(EntityManager em) {
         this.em = em;
     }
