@@ -24,13 +24,13 @@ public class EntertainmentController {
     @RequestMapping(method = RequestMethod.GET, path = {"/list/restaurant"})
     public String listRestaurant(Model model) {
         model.addAttribute("entertainments", entertainmentService.getListFromMapByType(EntertainmentType.RESTAURANT));
-        return "entertainments/list";
+        return "entertainment/list";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = {"/list/culture"})
     public String listCulture(Model model) {
         model.addAttribute("entertainments", entertainmentService.getListFromMapByType(EntertainmentType.CULTURE));
-        return "entertainments/list";
+        return "entertainment/list";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = {"/list/nature"})
