@@ -10,5 +10,5 @@ public enum EntertainmentType {
 
     CULTURE,
 
-    WILD
+    CRAZY
 }

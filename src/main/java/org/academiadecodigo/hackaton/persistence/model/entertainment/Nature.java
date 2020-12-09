@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 public class Nature extends Entertainment {
 
     @Override
-    public EntertainmentType getBusinessType() {
+    public EntertainmentType getEntertainmentType() {
         return EntertainmentType.NATURE;
     }
 }

@@ -11,38 +11,10 @@ import java.util.*;
 @Service
 public class UserServiceImpl implements UserService{
 
-    private UserDao userDao;
     private Map<Integer, User> userMap = new HashMap<>();
 
-    @Autowired
-    public void setUserDao(UserDao userDao) {
-        this.userDao = userDao;
-    }
-
     @Override
-    public User get(Integer id) {
-        return userDao.findById(id);
-    }
-
-    @Transactional
-    @Override
-    public User save(User user) {
-        return userDao.saveOrUpdate(user);
-    }
-
-    @Transactional
-    @Override
-    public void delete(Integer id) {
-        userDao.delete(id);
-    }
-
-    @Override
-    public List<User> list() {
-        return userDao.findAll();
-    }
-
-    @Override
-    public void saveUserOnMap(Integer id, User user){
+    public void saveUserOnMap(User user){
 
         if (user.getId() == null) {
             user.setId(getNextId());
@@ -59,6 +31,11 @@ public class UserServiceImpl implements UserService{
     @Override
     public List<User> getUserList(){
         return new ArrayList<>(userMap.values());
+    }
+
+    @Override
+    public void deleteUserOnMap(Integer id) {
+        userMap.remove(id);
     }
 
     private Integer getNextId() {

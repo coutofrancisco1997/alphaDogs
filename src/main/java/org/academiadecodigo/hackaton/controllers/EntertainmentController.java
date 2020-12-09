@@ -1,6 +1,7 @@
 package org.academiadecodigo.hackaton.controllers;
 
 import org.academiadecodigo.hackaton.persistence.model.entertainment.Entertainment;
+import org.academiadecodigo.hackaton.persistence.model.entertainment.EntertainmentType;
 import org.academiadecodigo.hackaton.services.EntertainmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,16 +21,40 @@ public class EntertainmentController {
         this.entertainmentService = entertainmentService;
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = {"/list", "/", ""})
-    public String listBusinessByType(@PathVariable String entertainmentType, Model model) {
-        model.addAttribute("entertainments", entertainmentService.listByType(entertainmentType));
+    @RequestMapping(method = RequestMethod.GET, path = {"/list/restaurant"})
+    public String listRestaurant(Model model) {
+        model.addAttribute("entertainments", entertainmentService.getListFromMapByType(EntertainmentType.RESTAURANT));
+        return "entertainments/list";
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = {"/list/culture"})
+    public String listCulture(Model model) {
+        model.addAttribute("entertainments", entertainmentService.getListFromMapByType(EntertainmentType.CULTURE));
+        return "entertainments/list";
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = {"/list/nature"})
+    public String listNature(Model model) {
+        model.addAttribute("entertainments", entertainmentService.getListFromMapByType(EntertainmentType.NATURE));
+        return "entertainments/list";
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = {"/list/services"})
+    public String listServices(Model model) {
+        model.addAttribute("entertainments", entertainmentService.getListFromMapByType(EntertainmentType.SERVICES));
+        return "entertainments/list";
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = {"/list/crazy"})
+    public String listCrazy(Model model) {
+        model.addAttribute("entertainments", entertainmentService.getListFromMapByType(EntertainmentType.CRAZY));
         return "entertainments/list";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/{id}")
     public String showEntertainment(@PathVariable Integer id, Model model) {
-        Entertainment entertainment = entertainmentService.get(id);
 
+        Entertainment entertainment = entertainmentService.getOnMap(id);
         model.addAttribute("entertainment", entertainment);
         return "entertainment/show";
     }

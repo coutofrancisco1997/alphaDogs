@@ -10,14 +10,17 @@ import javax.persistence.InheritanceType;
 
 @Entity(name = "entertainment")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "entertainment_type")
+//@DiscriminatorColumn(name = "entertainment_type")
 public abstract class Entertainment extends AbstractModel {
 
     private String name;
-    /*private Time open;
-    private Time close;*/
+    private String description;
+    private Integer avgPrice;
+    private String email;
+    private String phone;
+    private String workingHours;
 
-    public abstract EntertainmentType getBusinessType();
+    public abstract EntertainmentType getEntertainmentType();
 
     public String getName() {
         return name;
@@ -26,20 +29,56 @@ public abstract class Entertainment extends AbstractModel {
     public void setName(String name) {
         this.name = name;
     }
-/*
-    public Time getOpen() {
-        return open;
+
+    public String getPhone() {
+        return phone;
     }
 
-    public void setOpen(Time open) {
-        this.open = open;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public Time getClose() {
-        return close;
+    public String getEmail() {
+        return email;
     }
 
-    public void setClose(Time close) {
-        this.close = close;
-    }*/
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Integer getAvgPrice() {
+        return avgPrice;
+    }
+
+    public void setAvgPrice(Integer avgPrice) {
+        this.avgPrice = avgPrice;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getWorkingHours() {
+        return workingHours;
+    }
+
+    public void setWorkingHours(String workingHours) {
+        this.workingHours = workingHours;
+    }
+
+    @Override
+    public String toString() {
+        return "Entertainment{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", avgPrice=" + avgPrice +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", workingHours='" + workingHours + '\'' +
+                '}';
+    }
 }

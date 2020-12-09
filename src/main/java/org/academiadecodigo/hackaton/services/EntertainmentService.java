@@ -1,41 +1,19 @@
 package org.academiadecodigo.hackaton.services;
 
 import org.academiadecodigo.hackaton.persistence.model.entertainment.Entertainment;
+import org.academiadecodigo.hackaton.persistence.model.entertainment.EntertainmentType;
 
 import java.util.List;
 
 public interface EntertainmentService {
 
-    /**
-     * Gets the customer with the given id
-     *
-     * @param id the business id
-     * @return the business
-     */
-    Entertainment get(Integer id);
+    Entertainment getOnMap(Integer id);
 
+    List<Entertainment> getListFromMap();
 
-    /**
-     * Saves a business
-     *
-     * @param business the business to save
-     * @return the saved customer
-     */
-    Entertainment save(Entertainment business);
+    void deleteEntertainmentFromMap(Integer id);
 
-    /**
-     * Deletes a business
-     *
-     * @param id the business id
-     */
-    void delete(Integer id);
+    void addOnMap(Entertainment entertainment);
 
-    /**
-     * Gets a list of the business
-     *
-     * @return the business list
-     */
-    List<Entertainment> list();
-
-    List<Entertainment> listByType(String businessType);
+    List<Entertainment> getListFromMapByType(EntertainmentType entertainmentType);
 }
