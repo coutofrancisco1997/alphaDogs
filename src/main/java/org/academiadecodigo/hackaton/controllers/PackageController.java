@@ -25,4 +25,29 @@ public class PackageController {
     public String showEcoPackage(Model model) {
         return "EcoDate";
     }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/bankrupt")
+    public String showBankruptPackage(Model model) {
+        return "BankruptDate";
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/budget")
+    public String showOnABudgetPackage(Model model) {
+        return "BudgetDate";
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/lisbon")
+    public String showLisbonPackage(Model model) {
+        return "LisbonExperienceDate";
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/covid")
+    public String showCovidPackage(Model model) {
+        return "CovidDate";
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/drugs")
+    public String showDrugsPackage(Model model) {
+        return "home";
+    }
 }
