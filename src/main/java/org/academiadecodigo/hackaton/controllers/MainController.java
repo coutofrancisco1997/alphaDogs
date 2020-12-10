@@ -38,14 +38,14 @@ public class MainController {
         }
 
         dataInitialized=true;
-        User user = new User();
+        User user = new User(packet);
         user.setName("Batata");
         user.setEmail("mail@gmail.com");
         user.setPhone("5345345363");
         user.setPassword("123");
         userService.add(user);
 
-        User user1 = new User();
+        User user1 = new User(packet);
         user1.setName("Alho");
         user1.setEmail("mail@gmail.com");
         user1.setPhone("5345345363");

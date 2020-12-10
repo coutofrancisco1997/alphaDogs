@@ -1,6 +1,9 @@
 package org.academiadecodigo.hackaton.controllers;
 
 import org.academiadecodigo.hackaton.persistence.model.entertainment.Entertainment;
+import org.academiadecodigo.hackaton.services.EntertainmentService;
+import org.academiadecodigo.hackaton.services.PackageService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,6 +13,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping("/packages")
 public class PackageController {
+
+    private PackageService packageService;
+    private EntertainmentService entertainmentService;
+
+    @Autowired
+    public void setPackageService(PackageService packageService) {
+        this.packageService = packageService;
+    }
+
+    @Autowired
+    public void setEntertainmentService(EntertainmentService entertainmentService) {
+        this.entertainmentService = entertainmentService;
+    }
 
     @RequestMapping(method = RequestMethod.GET, path = "/all")
     public String showAllPackages(Model model) {
@@ -50,4 +66,10 @@ public class PackageController {
     public String showDrugsPackage(Model model) {
         return "DrugDate";
     }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/add")
+    public String addEntertainment(Model model){
+        return "";
+    }
+
 }

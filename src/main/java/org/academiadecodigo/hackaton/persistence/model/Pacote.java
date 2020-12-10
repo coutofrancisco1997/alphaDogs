@@ -2,10 +2,13 @@ package org.academiadecodigo.hackaton.persistence.model;
 
 import org.academiadecodigo.hackaton.persistence.model.entertainment.Entertainment;
 
+import javax.persistence.Entity;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Package extends AbstractModel{
+
+public class Pacote extends AbstractModel{
 
     private List<Entertainment> entertainmentList = new ArrayList<>();
 

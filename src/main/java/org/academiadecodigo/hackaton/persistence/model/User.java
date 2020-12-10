@@ -11,6 +11,7 @@ public class User extends AbstractModel{
     private String email;
     private String phone;
     private String password;
+    private Integer packetid;
 
     public String getName() {
         return name;
@@ -42,6 +43,14 @@ public class User extends AbstractModel{
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public void setPackageid(Integer packetid) {
+        this.packetid = packetid;
+    }
+
+    public Integer getPackageid() {
+        return packetid;
     }
 
     @Override
