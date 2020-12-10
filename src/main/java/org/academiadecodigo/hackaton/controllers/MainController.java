@@ -30,6 +30,8 @@ public class MainController {
         return "redirect:/home";
     }
 
+
+
     private void initializeData(){
         User user = new User();
         user.setName("Batata");
@@ -264,56 +266,56 @@ public class MainController {
 
 
         Entertainment culture = new PreDate();
-        culture.setName("Solar dos Presuntos");
-        culture.setAvgPrice(10);
+        culture.setName("Zoo");
+        culture.setAvgPrice(25);
         culture.setEmail("solardospresuntos@gmail.com");
         culture.setPhone("213424253");
         culture.setWorkingHours("12h - 22h30");
 
         Entertainment culture1 = new PreDate();
-        culture1.setName("Solar dos Presuntos");
-        culture1.setAvgPrice(10);
+        culture1.setName("Oceanarium");
+        culture1.setAvgPrice(25);
         culture1.setEmail("solardospresuntos@gmail.com");
         culture1.setPhone("213424253");
         culture1.setWorkingHours("12h - 22h30");
 
         Entertainment culture2 = new PreDate();
-        culture2.setName("Solar dos Presuntos");
-        culture2.setAvgPrice(10);
+        culture2.setName("Tiles Museum");
+        culture2.setAvgPrice(15);
         culture2.setEmail("solardospresuntos@gmail.com");
         culture2.setPhone("213424253");
         culture2.setWorkingHours("12h - 22h30");
 
         Entertainment culture3 = new PreDate();
-        culture3.setName("Solar dos Presuntos");
+        culture3.setName("Jerónimos Monasterium");
         culture3.setAvgPrice(10);
         culture3.setEmail("solardospresuntos@gmail.com");
         culture3.setPhone("213424253");
         culture3.setWorkingHours("12h - 22h30");
 
         Entertainment culture4 = new PreDate();
-        culture4.setName("Solar dos Presuntos");
+        culture4.setName("Sé Cathedral");
         culture4.setAvgPrice(10);
         culture4.setEmail("solardospresuntos@gmail.com");
         culture4.setPhone("213424253");
         culture4.setWorkingHours("12h - 22h30");
 
         Entertainment culture5 = new PreDate();
-        culture5.setName("Solar dos Presuntos");
+        culture5.setName("Coach Museum");
         culture5.setAvgPrice(10);
         culture5.setEmail("solardospresuntos@gmail.com");
         culture5.setPhone("213424253");
         culture5.setWorkingHours("12h - 22h30");
 
         Entertainment culture6 = new PreDate();
-        culture6.setName("Solar dos Presuntos");
+        culture6.setName("Navy Museum");
         culture6.setAvgPrice(10);
         culture6.setEmail("solardospresuntos@gmail.com");
         culture6.setPhone("213424253");
         culture6.setWorkingHours("12h - 22h30");
 
         Entertainment culture7 = new PreDate();
-        culture7.setName("Solar dos Presuntos");
+        culture7.setName("Ladra Street Fair");
         culture7.setAvgPrice(10);
         culture7.setEmail("solardospresuntos@gmail.com");
         culture7.setPhone("213424253");
