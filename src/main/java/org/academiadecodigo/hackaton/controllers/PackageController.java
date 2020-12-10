@@ -13,7 +13,6 @@ public class PackageController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/all")
     public String showAllPackages(Model model) {
-
         return "allPackages";
     }
 }
