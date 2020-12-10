@@ -6,7 +6,7 @@ import org.academiadecodigo.hackaton.services.UserService;
 import org.academiadecodigo.hackaton.services.UserServiceImpl;
 
 public class InitializeData {
-
+/*
 
     private void initializeData(){
         User user = new User();
@@ -430,5 +430,5 @@ public class InitializeData {
 
         entertainmentService.add(crazy);
     }
-
+*/
 }
