@@ -9,10 +9,23 @@ header{
     top: 0;
     
 }
+
+#packageTitle{
+
+    background-color: darksalmon ;
+    background-repeat: repeat; 
+ 
+    padding: 2%;
+    
+}
+
+
+
+
+
 .card{
     width: 2500em;
     background-size: 100%;
-    align-content: center;
     background-color: beige;
    
     margin-left: auto;
@@ -30,3 +43,8 @@ header{
     clear: none; 
 }
 
+.card-img-top{
+    
+    height: 300px;
+    object-fit: cover;
+}
