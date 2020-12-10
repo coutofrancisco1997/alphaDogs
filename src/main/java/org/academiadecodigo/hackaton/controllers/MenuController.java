@@ -33,4 +33,9 @@ public class MenuController {
         return "home";
     }
 
+    @RequestMapping(method = RequestMethod.GET, path = {"/about"})
+    public String aboutUs() {
+        return "home";
+    }
+
 }

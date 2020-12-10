@@ -15,4 +15,9 @@ public class PackageController {
     public String showAllPackages(Model model) {
         return "allPackages";
     }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/create")
+    public String createPackages(Model model) {
+        return "ownPack";
+    }
 }
