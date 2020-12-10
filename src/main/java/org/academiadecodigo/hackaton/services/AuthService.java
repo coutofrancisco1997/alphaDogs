@@ -11,10 +11,10 @@ public interface AuthService {
     /**
      * Authenticates the accessing customer
      *
-     * @param id the customer id
+     *
      * @return {@code true} if authentication was successful
      */
-    boolean authenticate(Integer id, String name, String password);
+    boolean authenticate(Integer id, String password);
 
     /**
      * Gets the accessing customer
