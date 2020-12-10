@@ -26,7 +26,7 @@ public class MainController {
 
     @RequestMapping
     public String home() {
-        initializeData();
+        //initializeData();
         return "redirect:/home";
     }
 

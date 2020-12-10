@@ -17,12 +17,14 @@ public class SpringBootstrap implements ApplicationListener<ContextRefreshedEven
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
 
+        InitializeData initializeData = new InitializeData();
         String[] profiles = event.getApplicationContext().getEnvironment().getActiveProfiles();
 
         System.out.println("#### Active Profiles: ####");
         for (String profile : profiles) {
             System.out.println("=> " + profile);
         }
+        initializeData.initializeData();
     }
 
 

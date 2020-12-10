@@ -2,13 +2,27 @@ package org.academiadecodigo.hackaton;
 
 import org.academiadecodigo.hackaton.persistence.model.User;
 import org.academiadecodigo.hackaton.persistence.model.entertainment.*;
+import org.academiadecodigo.hackaton.services.EntertainmentService;
 import org.academiadecodigo.hackaton.services.UserService;
 import org.academiadecodigo.hackaton.services.UserServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class InitializeData {
-/*
 
-    private void initializeData(){
+    private UserService userService;
+    private EntertainmentService entertainmentService;
+
+    @Autowired
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
+
+    @Autowired
+    public void setEntertainmentService(EntertainmentService entertainmentService) {
+        this.entertainmentService = entertainmentService;
+    }
+
+    public void initializeData(){
         User user = new User();
         user.setName("Batata");
         user.setEmail("mail@gmail.com");
@@ -430,5 +444,5 @@ public class InitializeData {
 
         entertainmentService.add(crazy);
     }
-*/
+
 }
