@@ -3,10 +3,12 @@ package org.academiadecodigo.hackaton.services;
 import org.academiadecodigo.hackaton.persistence.dao.EntertainmentDao;
 import org.academiadecodigo.hackaton.persistence.model.entertainment.Entertainment;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Service
 public class JpaEntertainmentServiceImpl implements JpaEntertainmentService{
 
     private EntertainmentDao entertainmentDao;

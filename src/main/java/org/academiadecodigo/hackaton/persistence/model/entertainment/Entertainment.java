@@ -19,6 +19,7 @@ public abstract class Entertainment extends AbstractModel {
     private String email;
     private String phone;
     private String workingHours;
+    private EntertainmentType entertainmentType;
 
     public abstract EntertainmentType getEntertainmentType();
 
