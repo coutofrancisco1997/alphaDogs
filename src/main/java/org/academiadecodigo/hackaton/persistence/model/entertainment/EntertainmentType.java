@@ -4,11 +4,12 @@ public enum EntertainmentType {
 
     RESTAURANT,
 
-    NATURE,
+    PRE_DATE,
 
-    SERVICES,
+    POS_DATE,
 
-    CULTURE,
+    TRANSPORT,
 
     CRAZY
+
 }

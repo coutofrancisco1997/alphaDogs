@@ -1,11 +1,8 @@
 package org.academiadecodigo.hackaton.services;
 
-import org.academiadecodigo.hackaton.persistence.dao.EntertainmentDao;
 import org.academiadecodigo.hackaton.persistence.model.entertainment.Entertainment;
 import org.academiadecodigo.hackaton.persistence.model.entertainment.EntertainmentType;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 
@@ -15,22 +12,22 @@ public class EntertainmentServiceImpl implements EntertainmentService {
     private Map<Integer, Entertainment> entertainmentMap = new HashMap<>();
 
     @Override
-    public Entertainment getOnMap(Integer id){
+    public Entertainment get(Integer id){
         return entertainmentMap.get(id);
     }
 
     @Override
-    public List<Entertainment> getListFromMap(){
+    public List<Entertainment> list(){
         return new ArrayList<>(entertainmentMap.values());
     }
 
     @Override
-    public void deleteEntertainmentFromMap(Integer id) {
+    public void delete(Integer id) {
         entertainmentMap.remove(id);
     }
 
     @Override
-    public void addOnMap(Entertainment entertainment){
+    public void add(Entertainment entertainment){
 
         if (entertainment.getId() == null) {
             entertainment.setId(getNextId());
@@ -40,10 +37,10 @@ public class EntertainmentServiceImpl implements EntertainmentService {
     }
 
     @Override
-    public List<Entertainment> getListFromMapByType(EntertainmentType entertainmentType) {
+    public List<Entertainment> listByType(EntertainmentType entertainmentType) {
 
         List<Entertainment> newList = new ArrayList<>();
-        List<Entertainment> mapList = getListFromMap();
+        List<Entertainment> mapList = list();
 
         for (Entertainment entertainment: mapList) {
             if(entertainment.getEntertainmentType()==entertainmentType){

@@ -19,9 +19,14 @@ public abstract class Entertainment extends AbstractModel {
     private String email;
     private String phone;
     private String workingHours;
+    private String closed;
     private EntertainmentType entertainmentType;
 
     public abstract EntertainmentType getEntertainmentType();
+
+    public void setEntertainmentType(EntertainmentType entertainmentType) {
+        this.entertainmentType = entertainmentType;
+    }
 
     public String getName() {
         return name;
@@ -69,6 +74,14 @@ public abstract class Entertainment extends AbstractModel {
 
     public void setWorkingHours(String workingHours) {
         this.workingHours = workingHours;
+    }
+
+    public String getClosed() {
+        return closed;
+    }
+
+    public void setClosed(String closed) {
+        this.closed = closed;
     }
 
     @Override

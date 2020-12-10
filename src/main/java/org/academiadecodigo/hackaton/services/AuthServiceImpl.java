@@ -25,12 +25,17 @@ public class AuthServiceImpl implements AuthService {
     }
 
     /**
-     * @see AuthService#authenticate(Integer)
+     * @see AuthService#authenticate(Integer,String,String)
      */
     @Override
-    public boolean authenticate(Integer id) {
+    public boolean authenticate(Integer id, String name, String password) {
 
-        accessingUser = userService.get(id);
+        for (User user: userService.list()) {
+            if(user.getName().equals(name) && user.getPassword().equals(password)){
+                accessingUser = user;
+            }
+        }
+        //accessingUser = userService.get(id);
         return accessingUser != null;
     }
 

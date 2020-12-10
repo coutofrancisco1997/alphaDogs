@@ -23,38 +23,38 @@ public class EntertainmentController {
 
     @RequestMapping(method = RequestMethod.GET, path = {"/list/restaurant"})
     public String listRestaurant(Model model) {
-        model.addAttribute("entertainments", entertainmentService.getListFromMapByType(EntertainmentType.RESTAURANT));
+        model.addAttribute("entertainments", entertainmentService.listByType(EntertainmentType.RESTAURANT));
         return "entertainment/list";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = {"/list/culture"})
-    public String listCulture(Model model) {
-        model.addAttribute("entertainments", entertainmentService.getListFromMapByType(EntertainmentType.CULTURE));
+    public String listTransport(Model model) {
+        model.addAttribute("entertainments", entertainmentService.listByType(EntertainmentType.TRANSPORT));
         return "entertainment/list";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = {"/list/nature"})
-    public String listNature(Model model) {
-        model.addAttribute("entertainments", entertainmentService.getListFromMapByType(EntertainmentType.NATURE));
+    public String listPosDate(Model model) {
+        model.addAttribute("entertainments", entertainmentService.listByType(EntertainmentType.POS_DATE));
         return "entertainments/list";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = {"/list/services"})
-    public String listServices(Model model) {
-        model.addAttribute("entertainments", entertainmentService.getListFromMapByType(EntertainmentType.SERVICES));
+    public String listPreDate(Model model) {
+        model.addAttribute("entertainments", entertainmentService.listByType(EntertainmentType.PRE_DATE));
         return "entertainments/list";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = {"/list/crazy"})
     public String listCrazy(Model model) {
-        model.addAttribute("entertainments", entertainmentService.getListFromMapByType(EntertainmentType.CRAZY));
+        model.addAttribute("entertainments", entertainmentService.listByType(EntertainmentType.CRAZY));
         return "entertainments/list";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/{id}")
     public String showEntertainment(@PathVariable Integer id, Model model) {
 
-        Entertainment entertainment = entertainmentService.getOnMap(id);
+        Entertainment entertainment = entertainmentService.get(id);
         model.addAttribute("entertainment", entertainment);
         return "entertainment/show";
     }

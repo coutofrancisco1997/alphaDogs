@@ -3,10 +3,10 @@ package org.academiadecodigo.hackaton.persistence.model.entertainment;
 import javax.persistence.Entity;
 
 @Entity
-public class Culture extends Entertainment {
+public class PosDate extends Entertainment {
 
     @Override
     public EntertainmentType getEntertainmentType() {
-        return EntertainmentType.CULTURE;
+        return EntertainmentType.POS_DATE;
     }
 }

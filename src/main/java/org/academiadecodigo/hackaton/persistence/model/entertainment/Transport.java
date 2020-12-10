@@ -1,12 +1,8 @@
 package org.academiadecodigo.hackaton.persistence.model.entertainment;
 
-import javax.persistence.Entity;
-
-@Entity
-public class Services extends Entertainment {
-
+public class Transport extends Entertainment{
     @Override
     public EntertainmentType getEntertainmentType() {
-        return EntertainmentType.SERVICES;
+        return EntertainmentType.TRANSPORT;
     }
 }

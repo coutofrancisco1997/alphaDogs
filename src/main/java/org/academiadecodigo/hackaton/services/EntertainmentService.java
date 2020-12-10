@@ -7,13 +7,13 @@ import java.util.List;
 
 public interface EntertainmentService {
 
-    Entertainment getOnMap(Integer id);
+    Entertainment get(Integer id);
 
-    List<Entertainment> getListFromMap();
+    List<Entertainment> list();
 
-    void deleteEntertainmentFromMap(Integer id);
+    void delete(Integer id);
 
-    void addOnMap(Entertainment entertainment);
+    void add(Entertainment entertainment);
 
-    List<Entertainment> getListFromMapByType(EntertainmentType entertainmentType);
+    List<Entertainment> listByType(EntertainmentType entertainmentType);
 }
