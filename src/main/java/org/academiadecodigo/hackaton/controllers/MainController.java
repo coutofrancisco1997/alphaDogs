@@ -36,6 +36,7 @@ public class MainController {
         if(dataInitialized){
             return;
         }
+
         dataInitialized=true;
         User user = new User();
         user.setName("Batata");
