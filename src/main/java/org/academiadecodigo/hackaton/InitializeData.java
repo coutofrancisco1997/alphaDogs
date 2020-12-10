@@ -6,7 +6,9 @@ import org.academiadecodigo.hackaton.services.EntertainmentService;
 import org.academiadecodigo.hackaton.services.UserService;
 import org.academiadecodigo.hackaton.services.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class InitializeData {
 
     private UserService userService;
