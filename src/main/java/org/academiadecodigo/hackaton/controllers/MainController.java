@@ -37,6 +37,12 @@ public class MainController {
         user.setPhone("5345345363");
         userService.add(user);
 
+        User user1 = new User();
+        user1.setName("Alho");
+        user1.setEmail("mail@gmail.com");
+        user1.setPhone("5345345363");
+        userService.add(user1);
+
         Entertainment entertainment = new Restaurant();
         entertainment.setName("Alho");
         entertainment.setAvgPrice(10);
