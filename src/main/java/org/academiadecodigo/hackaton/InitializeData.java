@@ -8,11 +8,12 @@ import org.academiadecodigo.hackaton.services.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
+
 public class InitializeData {
 
     private UserService userService;
     private EntertainmentService entertainmentService;
+    private boolean initialized = false;
 
     @Autowired
     public void setUserService(UserService userService) {
@@ -25,6 +26,7 @@ public class InitializeData {
     }
 
     public void initializeData(){
+
         User user = new User();
         user.setName("Batata");
         user.setEmail("mail@gmail.com");

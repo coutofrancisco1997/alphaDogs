@@ -13,6 +13,7 @@ public class MainController {
 
     private UserService userService;
     private EntertainmentService entertainmentService;
+    private boolean dataInitialized = false;
 
     @Autowired
     public void setEntertainmentService(EntertainmentService entertainmentService) {
@@ -26,11 +27,16 @@ public class MainController {
 
     @RequestMapping
     public String home() {
-        //initializeData();
+        initializeData();
         return "redirect:/home";
     }
 
     private void initializeData(){
+
+        if(dataInitialized){
+            return;
+        }
+        dataInitialized=true;
         User user = new User();
         user.setName("Batata");
         user.setEmail("mail@gmail.com");
