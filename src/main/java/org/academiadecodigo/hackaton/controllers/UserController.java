@@ -21,11 +21,17 @@ public class UserController {
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/{id}")
-    public String showCustomer(@PathVariable Integer id, Model model) {
+    public String showUser(@PathVariable Integer id, Model model) {
 
         User user = userService.get(id);
 
         model.addAttribute("user", user);
         return "user/show";
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/signup")
+    public String signUpUser(Model model) {
+        model.addAttribute("user", new User());
+        return "user/sign-up-edit";
     }
 }

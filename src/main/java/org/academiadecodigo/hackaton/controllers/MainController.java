@@ -30,8 +30,6 @@ public class MainController {
         return "redirect:/home";
     }
 
-
-
     private void initializeData(){
         User user = new User();
         user.setName("Batata");
@@ -324,91 +322,94 @@ public class MainController {
 
 
         Entertainment transport = new Transport();
-        transport.setName("Po");
+        transport.setName("Tuk Tuk Tours");
         transport.setAvgPrice(10);
         transport.setEmail("@mail.com");
         transport.setPhone("952345");
         transport.setWorkingHours("10:00 - 22:00");
 
         Entertainment transport1 = new Transport();
-        transport1.setName("Po");
-        transport1.setAvgPrice(10);
+        transport1.setName("Uber Black");
+        transport1.setAvgPrice(20);
         transport1.setEmail("@mail.com");
         transport1.setPhone("952345");
         transport1.setWorkingHours("10:00 - 22:00");
 
         Entertainment transport2 = new Transport();
-        transport2.setName("Po");
+        transport2.setName("Uber X");
         transport2.setAvgPrice(10);
         transport2.setEmail("@mail.com");
         transport2.setPhone("952345");
         transport2.setWorkingHours("10:00 - 22:00");
 
         Entertainment transport3 = new Transport();
-        transport3.setName("Po");
-        transport3.setAvgPrice(10);
+        transport3.setName("E-Cooltra");
+        transport3.setAvgPrice(5);
         transport3.setEmail("@mail.com");
         transport3.setPhone("952345");
         transport3.setWorkingHours("10:00 - 22:00");
 
         Entertainment transport4 = new Transport();
-        transport4.setName("Po");
-        transport4.setAvgPrice(10);
+        transport4.setName("VIP Limousines");
+        transport4.setAvgPrice(75);
         transport4.setEmail("@mail.com");
         transport4.setPhone("952345");
         transport4.setWorkingHours("10:00 - 22:00");
 
         Entertainment transport5 = new Transport();
-        transport5.setName("Po");
-        transport5.setAvgPrice(10);
+        transport5.setName("Gira Bikes");
+        transport5.setAvgPrice(5);
         transport5.setEmail("@mail.com");
         transport5.setPhone("952345");
         transport5.setWorkingHours("10:00 - 22:00");
 
+
+
+
         Entertainment posDate = new PosDate();
-        posDate.setName("E");
-        posDate.setAvgPrice(10);
+        posDate.setName("Ritz Hotel");
+        posDate.setAvgPrice(250);
         posDate.setEmail("@mail.com");
         posDate.setPhone("952345");
         posDate.setWorkingHours("10:00 - 22:00");
 
         Entertainment posDate1 = new PosDate();
-        posDate1.setName("E");
-        posDate1.setAvgPrice(10);
+        posDate1.setName("Tivoli Hotel");
+        posDate1.setAvgPrice(100);
         posDate1.setEmail("@mail.com");
         posDate1.setPhone("952345");
         posDate1.setWorkingHours("10:00 - 22:00");
 
         Entertainment posDate2 = new PosDate();
-        posDate2.setName("E");
-        posDate2.setAvgPrice(10);
+        posDate2.setName("Chapitô");
+        posDate2.setAvgPrice(5);
         posDate2.setEmail("@mail.com");
-        posDate2.setPhone("952345");
+        posDate2.setPhone("9523454234");
         posDate2.setWorkingHours("10:00 - 22:00");
 
         Entertainment posDate3 = new PosDate();
-        posDate3.setName("E");
-        posDate3.setAvgPrice(10);
+        posDate3.setName("Loucos e Sonhadores");
+        posDate3.setAvgPrice(5);
         posDate3.setEmail("@mail.com");
-        posDate3.setPhone("952345");
+        posDate3.setPhone("952523525");
         posDate3.setWorkingHours("10:00 - 22:00");
 
         Entertainment posDate4 = new PosDate();
-        posDate4.setName("E");
-        posDate4.setAvgPrice(10);
+        posDate4.setName("Silk Club");
+        posDate4.setAvgPrice(15);
         posDate4.setEmail("@mail.com");
-        posDate4.setPhone("952345");
+        posDate4.setPhone("915632624");
         posDate4.setWorkingHours("10:00 - 22:00");
 
         Entertainment posDate5 = new PosDate();
-        posDate5.setName("E");
+        posDate5.setName("Foxtrot Bar");
         posDate5.setAvgPrice(10);
         posDate5.setEmail("@mail.com");
-        posDate5.setPhone("952345");
+        posDate5.setPhone("9274674r4");
         posDate5.setWorkingHours("10:00 - 22:00");
 
         Entertainment posDate6 = new PosDate();
-        posDate6.setName("E");
+        posDate6.setName("Pavilhão Chinês");
         posDate6.setAvgPrice(10);
         posDate6.setEmail("@mail.com");
         posDate6.setPhone("952345");

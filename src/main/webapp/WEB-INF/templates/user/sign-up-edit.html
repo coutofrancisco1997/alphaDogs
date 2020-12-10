@@ -42,6 +42,7 @@
     float: center;
     clear: none; 
 }
+
 </style>
 
 <body>
@@ -60,20 +61,20 @@
     <div id="navbar">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-        <a class="navbar-brand" href="#">Home</a>
+        <a class="navbar-brand" th:href="@{/home}">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#">Packages</a>
+                <a class="nav-link" th:href="@{/packages/all}">Packages</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Create Package</a>
+                <a class="nav-link" th:href="@{/packages/create}">Create Package</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About us</a>
+              <a class="nav-link" th:href="@{/home/about}">About us</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Contacts</a>
@@ -83,7 +84,7 @@
             </li>
             <div class="sign"style="position: absolute; right: 0">
                 <span class="navbar-text">
-                    <button class="btn btn-outline-danger" type="submit" style="float: right">Sign out</button>
+                    <a class="btn btn-outline-danger" type="submit" style="float: right" th:href="@{/home}">Sign out</a>
                   </span>
             </div>
         </div>
@@ -99,7 +100,7 @@
 
     <div class="container row">
         <div class="col-sm-8">
-            <form class="form-horizontal" th:object="${customer}" th:action="@{/customer}" method="post">
+            <form class="form-horizontal" th:object="${user}" th:action="@{/WEB-INF/templates/user}" method="post">
 
                 <!-- since we are using same form for add and update,
                   we need to bind id input field to customer object
