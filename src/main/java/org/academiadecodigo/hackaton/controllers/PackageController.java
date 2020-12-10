@@ -20,4 +20,9 @@ public class PackageController {
     public String createPackages(Model model) {
         return "ownPack";
     }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/eco")
+    public String showEcoPackage(Model model) {
+        return "EcoDate";
+    }
 }
