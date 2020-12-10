@@ -66,20 +66,20 @@
     <div id ="navbar">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Home</a>
+                <a class="navbar-brand" th:href="@{/home}">Home</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Packages</a>
+                            <a class="nav-link" th:href="@{/packages/all}"><Strong>Packages</Strong></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Create Package</a>
+                            <a class="nav-link" th:href="@{/packages/create}">Create Package</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About Us</a>
+                            <a class="nav-link" th:href="@{/home/about}">About Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Our Partners</a>
@@ -91,6 +91,7 @@
                             <button class="btn btn-outline-danger" type="submit" style="float: right">Sign In </button>
                             <button class="btn btn-outline-danger" type="submit" style="float: right">Sign up</button>
                           </span>
+     
                     </div>
                 </div>
             </div>
@@ -99,15 +100,15 @@
     <div class=body>
         <div id = "packageTitle">
             <div id = "packageBigTitle">
-                <h2><b>NEW Covid Date Package</b> </h2>
+                <h2><b>On a Budget Date Package</b> </h2>
             </div>
             <div id = "packageTitleDescription">
-                <h3>Don't feel safe on the streets? Don't worry, we can help spice things up without even leaving home.</h3>
+                <h3>The proof you don’t need much money to have a great and romantic day.</h3>
             </div>
         </div>
         <div id = "description">
             <br></br>
-            <h5> The Hold Your Hand's Special Covid Package is a package created so that even the people who are too affraid of leaving home or can't do it for other reasons (to be honest, that's none of our business). This package will turn what could be a lonely and boring night into a romantic, cheerful, and spicy evening where distance is not a problem.</h5>
+            <h5>We think everyone deserves to have special romantic days regardless of their finantial situation. That's why Hold Your Hand created a more affordable package that, despite being cheaper, it stills provides an unique day to spend with your partner.</h5>
             <br></br>
             <h5><b>This package includes:</b></h5>
         </div>
@@ -117,44 +118,33 @@
 
         <div class="cards">
             <div class="card" style="width: 50rem;">
-                <img src="Resources/Flowers.jpg" class="card-img-top" alt="diyPackages">
+                <img src="Resources/Gulbenkian.jpg" class="card-img-top" alt="diyPackages">
                 <div class="card-body">
-                <h5 class="card-title">Romantic Personalized Flower Home Delivery</h5>
-                <p class="card-text">You can't spell love without flowers.... Ok, you can, but you get the idea. </p>
+                <h5 class="card-title">Picnic @ Gulbenkian Garden</h5>
+                <p class="card-text">Probably the garden which has senn the biggest number of dates in Lisbon.
+                </p>
 
                 <button type="button" class="btn btn-outline-success">View Details</button>
                 </div>
             </div>
 
             <div class="card" style="width: 50rem;">
-                <img src="Resources/Comida.jpg" class="card-img-top" alt="diyPackages">
+                <img src="Resources/Clandestino.jpg" class="card-img-top" alt="diyPackages">
                 <div class="card-body">
-                <h5 class="card-title">Dinner provided by <b>Casa da Comida</b></h5>
-                <p class="card-text"> No need to get ready to leave home, the food will come to you, warm delicious. </p>
+                <h5 class="card-title">Dinner @ Chinês Clandestino </h5>
+                <p class="card-text">Discover this multicultural treasure that Lisbon hides in the streets of Martim Moniz</p>
                 <button type="button" class="btn btn-outline-success">View Details</button>
                 </div>
             </div>
 
             <div class="card" style="width: 50rem;">
-                <img src="Resources/Escape.png" class="card-img-top" alt="diyPackages">
+                <img src="Resources/Graça.jpg" class="card-img-top" alt="diyPackages">
                 <div class="card-body">
-                <h5 class="card-title">Play a <b>Escape Game</b> or <b>Watch a Movie</b> </h5>
-                <p class="card-text"> Let's have some fun with multiplayer games or a movie, we have a few suggestions.</p>
+                <h5 class="card-title">After Dinner @ Graça Viewpoint</h5>
+                <p class="card-text">Watch Lisbon in one of best spots to apreciate its beauty and magic in an historical place. </p>
                 <button type="button" class="btn btn-outline-success">View Details</button>
                 </div>
             </div>
-
-            <div class="card" style="width: 50rem;">
-                <img src="Resources/Shy.png" class="card-img-top" alt="diyPackages">
-                <div class="card-body">
-                <h5 class="card-title">OPTIONAL <b>Long Distance Sex Toys</b> Experience </h5>
-                <p class="card-text">Being isolated doesn't mean you cannot have fun too. Let your libido show you the way!</p>
-                <button type="button" class="btn btn-outline-success">View Details</button>
-                </div>
-            </div>
-
-
-
         </div>
 
         <div class="sign">

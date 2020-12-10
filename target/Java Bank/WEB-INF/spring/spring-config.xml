@@ -10,9 +10,7 @@
         <property name="locations" value="classpath:hold-your-hands.properties"/>
     </bean>
 
-    <!--<mvc:resources mapping="" location=""/>-->
-
-   <!--Use spring servlet for all requests, including static resources -->
+    <!-- Use spring servlet for all requests, including static resources -->
     <mvc:default-servlet-handler/>
 
     <!-- User @Controller, @Service annotations -->
