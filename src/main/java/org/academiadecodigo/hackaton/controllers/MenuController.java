@@ -28,6 +28,9 @@ public class MenuController {
 
     @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
     public String home(Model model) {
+        model.addAttribute(userService.get(1));
+        model.addAttribute(userService.get(2));
+        model.addAttribute(userService.get(3));
         return "home";
     }
 

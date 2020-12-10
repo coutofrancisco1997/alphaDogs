@@ -48,6 +48,6 @@ public class PackageController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/drugs")
     public String showDrugsPackage(Model model) {
-        return "home";
+        return "redirect:/home";
     }
 }
