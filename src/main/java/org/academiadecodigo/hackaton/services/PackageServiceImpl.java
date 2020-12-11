@@ -1,6 +1,6 @@
 package org.academiadecodigo.hackaton.services;
 
-import org.academiadecodigo.hackaton.persistence.model.Pacote;
+import org.academiadecodigo.hackaton.persistence.model.Pact;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -8,15 +8,15 @@ import java.util.*;
 @Service
 public class PackageServiceImpl implements PackageService{
 
-    private Map<Integer, Pacote> packageMap = new HashMap<>();
+    private Map<Integer, Pact> packageMap = new HashMap<>();
 
     @Override
-    public Pacote get(Integer id) {
+    public Pact get(Integer id) {
         return packageMap.get(id);
     }
 
     @Override
-    public List<Pacote> list() {
+    public List<Pact> list() {
         return new ArrayList<>(packageMap.values());
     }
 
@@ -26,7 +26,7 @@ public class PackageServiceImpl implements PackageService{
     }
 
     @Override
-    public void add(Pacote pacote) {
+    public void add(Pact pacote) {
 
         if (pacote.getId() == null) {
             pacote.setId(getNextId());

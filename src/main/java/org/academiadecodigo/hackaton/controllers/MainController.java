@@ -1,6 +1,6 @@
 package org.academiadecodigo.hackaton.controllers;
 
-import org.academiadecodigo.hackaton.persistence.model.Pacote;
+import org.academiadecodigo.hackaton.persistence.model.Pact;
 import org.academiadecodigo.hackaton.persistence.model.User;
 import org.academiadecodigo.hackaton.persistence.model.entertainment.*;
 import org.academiadecodigo.hackaton.services.EntertainmentService;
@@ -476,15 +476,15 @@ public class MainController {
 
 
 
+/*
 
-
-        Pacote eco = new Pacote();
+        Pact eco = new Pact();
         eco.addEntertainment(nature7);
         eco.addEntertainment(tibatanos);
         eco.addEntertainment(chapito);
         packageService.add(eco);
 
-        Pacote budget = new Pacote();
+        Pact budget = new Pact();
         budget.addEntertainment(gulbenkian);
 
         Entertainment chines = new Restaurant();
@@ -506,7 +506,7 @@ public class MainController {
         packageService.add(budget);
 
 
-        Pacote bankrupt = new Pacote();
+        Pact bankrupt = new Pact();
         Entertainment tagus = new PreDate();
         tagus.setName("Tagus River");
         tagus.setAvgPrice(75);
@@ -522,13 +522,13 @@ public class MainController {
         bankrupt.addEntertainment(ritz);
         packageService.add(bankrupt);
 
-        Pacote lisbon = new Pacote();
+        Pact lisbon = new Pact();
         lisbon.addEntertainment(tiles);
         lisbon.addEntertainment(graca);
         lisbon.addEntertainment(vinho);
         packageService.add(lisbon);
 
-        Pacote covid = new Pacote();
+        Pact covid = new Pact();
         covid.addEntertainment(allFlowers);
         Entertainment casa = new Restaurant();
         casa.setName("Casa da Comida");
@@ -543,7 +543,7 @@ public class MainController {
         covid.addEntertainment(afrodite);
         packageService.add(covid);
 
-        Pacote drug = new Pacote();
+        Pact drug = new Pact();
         Entertainment maat = new PreDate();
         maat.setName("MAAT");
         maat.setAvgPrice(10);
@@ -576,6 +576,6 @@ public class MainController {
 
         drug.addEntertainment(graca);
         packageService.add(drug);
-
+*/
     }
 }
