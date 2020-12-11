@@ -62,13 +62,9 @@ public class SignController {
     @RequestMapping(method = RequestMethod.POST, path = {"/up/save"}, params = "action=save")
     public String saveCustomer(@Valid @ModelAttribute("user") User user, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
-        if (bindingResult.hasErrors()) {
-            return "user/sign-up-edit";
-        }
-        
         userService.add(user);
-        redirectAttributes.addFlashAttribute("lastAction", "Saved " + user.getName());
         return "redirect:/home/main";
+        
     }
 
 
