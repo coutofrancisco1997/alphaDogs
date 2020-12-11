@@ -39,7 +39,7 @@ public class HomeController {
 
     @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
     public String home(Model model) {
-        return "home";
+        return "main";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = {"/about"})
@@ -69,7 +69,7 @@ public class HomeController {
         return "user/sign-in";
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = {"/", ""}, params = "action=save")
+    @RequestMapping(method = RequestMethod.POST, path = {"/save"}, params = "action=save")
     public String saveCustomer(@Valid @ModelAttribute("user") User user, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
         if (bindingResult.hasErrors()) {
@@ -81,7 +81,7 @@ public class HomeController {
     }
 
 
-    @RequestMapping(method = RequestMethod.POST, path = {"/", ""}, params = "action=cancel")
+    @RequestMapping(method = RequestMethod.POST, path = {"/cancel"}, params = "action=cancel")
     public String cancelSaveCustomer() {
         return "redirect:/user/sign-up-edit";
     }
