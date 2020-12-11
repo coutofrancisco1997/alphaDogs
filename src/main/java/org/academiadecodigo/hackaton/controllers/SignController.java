@@ -33,7 +33,8 @@ public class SignController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/up")
     public String signUpUser(Model model) {
-        model.addAttribute("user", new User());
+        User user = new User();
+        model.addAttribute("user", user);
         return "user/sign-up-edit";
     }
 
@@ -63,8 +64,8 @@ public class SignController {
     public String saveCustomer(@Valid @ModelAttribute("user") User user, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
         userService.add(user);
+        authService.setAccessingUser(user);
         return "redirect:/home/main";
-        
     }
 
 
