@@ -10,15 +10,26 @@
     <title>About Us</title>
 </head>
 <style>
+
+    body{
+        background-image: url(https://i.ibb.co/pj3ZKDP/d6ji3qh-1beb5458-4675-49b3-aa00-a8c31a09632c.jpg);
+        border-radius: 50%;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Montserrat:wght@1000&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Quando&display=swap');
+
     header{
     text-align: center;
-    background-color: beige;
+
 
 
     width: 100%;
     padding-top: 3%;
     padding-bottom: 3%;
     top: 0;
+    font-family: 'Montserrat', sans-serif;
+
     
 }
 .card{
@@ -42,10 +53,23 @@
     clear: none; 
 }
 
+button{
+    text-align: center;
+    font-family: 'Quando', serif;}
+
+.page-footer{
+    font-family: 'Quando', serif;
+    font-size: 12px;
+}
+.title{
+    text-align: center;
+}
+
 </style>
 <body>
     <header>
         <div id="title">
+            <img class="logo" src="https://i.ibb.co/d0DP7sw/4dbb718ad6d486a1aa9677bf9e4959b6.png" width="10%">
             <div class = "main title">
                 <h1>I Want To Hold Your Hand</h1>
             </div>
@@ -79,8 +103,8 @@
             </li>
             <div class="sign"style="position: absolute; right: 0">
                 <span class="navbar-text">
-                    <button class="btn btn-outline-danger" type="submit" style="float: right">Sign In </button>
-                    <button class="btn btn-outline-danger" type="submit" style="float: right">Sign up</button>
+                    <button class="btn btn-outline-secondary btn-sm" type="submit" style="float: right">Your Info</button>
+                    <button class="btn btn-outline-secondary btn-sm" type="submit" style="float: right">Sign-out</button>
                   </span>
             </div>
         </div>
@@ -92,7 +116,7 @@
     <div class="body">
         <div class="cards">
             <div class="card" style="width: 150rem;">
-                <img src="resources/pacote-romance.jpg" class="card-img-top" alt="diyPackages">
+                <img src="https://i.ibb.co/pPgHkyk/packroman.jpg" class="card-img-top" alt="diyPackages">
                 <div class="card-body">
                 <h5 class="card-title">About us:</h5>
                 <p class="card-text">With romance going on a downfall, we decided to develop this application in order to preserve and also cultivate the last glimmer of romanticism running in your veins.From pre-date activities to transportation when heading back home, our "HoldYourHands" app will take care of every detail for you, even the ones that you didn't think of, with handpicked suggestions to have the best time with your loved one.So if you always wanted to shine on a date, but never knew how and failure got the best of you every time, trust us and become an instant hopeless romantic with our custom made plans for your perfect date.
@@ -107,44 +131,55 @@
    
     <h2 style="text-align:center">Our Team</h2>
 
-    <div class="cards">
-        <div class="card" style="width: 50rem;">
-            <img src="resources/tiago.png" class="card-img-top" alt="diyPackages">
-            <div class="card-body">
-            <h5 class="card-title">Tiago Pinto</h5>
-            <p class="card-text">Romance specialist. With enumerous successfull dates and a go-to guy.  
-            </p>
-            <p class="card-text"><strong>Contact: love_doctor@hold-your-hand.com</strong></p>
+        <div class="cards">
+            <div class="card" style="width: 50rem;">
+                <img src="https://i.ibb.co/7zn448M/TiagoP.png" class="card-img-top" alt="diyPackages">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>Tiago Pinto</strong></h5>
+                    <p class="card-text">Romance specialist. With enumerous successfull dates and a go-to guy.
+                    </p>
+                    <br>
+                    <p class="card-text"><strong>love_doctor@hold-your-hand.com</strong></p>
+                </div>
             </div>
-        </div>
 
-        <div class="card" style="width: 50rem;">
-            <img src="resources/francisco.png" class="card-img-top" alt="diyPackages">
-            <div class="card-body">
-            <h5 class="card-title">Francisco Couto</h5>
-            <p class="card-text">Eco nut. Conquer love with a eco-heart and leaves no carboon footprint.</p>
-            <p class="card-text"><strong>Contact: eco_heart@hold-your-hand.com</strong></p>
-            </div>
-        </div>
-        <div class="card" style="width: 50rem;">
-            <img src="resources/victal.png" class="card-img-top" alt="diyPackages">
-            <div class="card-body">
-            <h5 class="card-title">Carlos Victal</h5>
-            <p class="card-text">Kinky master. Always finds a way to make your date nice and spicy. It will never be boring.</p>
-            <p class="card-text"><strong>Contact: spice_master@hold-your-hand.com</strong></p>
-            </div>
-        </div>
-        <div class="card" style="width: 50rem;">
-            <img src="resources/afonso.png" class="card-img-top" alt="diyPackages">
-            <div class="card-body">
-            <h5 class="card-title">Afonso Duque</h5>
-            <p class="card-text">Tech guy. Finds the algorithm to match our partners and your needs.</p>
-            <p class="card-text"><strong>Contact: match_maker@hold-your-hand.com</strong></p>
-            </div>
-        </div>
-    </div>
+            <div class="card" style="width: 50rem;">
+                <img src="https://i.ibb.co/ch3gMDY/0-removebg-preview.png" class="card-img-top" alt="diyPackages">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>Francisco Couto</strong></h5>
 
-       
+                    <p class="card-text">Eco nut. Conquer love with a eco-heart and leaves no carboon footprint.</p>
+                    <br>
+                    <p class="card-text"><strong>eco_heart@hold-your-hand.com</strong></p>
+                </div>
+            </div>
+            <div class="card" style="width: 50rem;">
+                <img src="https://i.ibb.co/wYmsqh4/1606598039481-removebg-preview.png" class="card-img-top" alt="diyPackages">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>Carlos Victal</strong></h5>
+                    <p class="card-text">Kinky master. Always finds a way to make your date nice and spicy. It will never be boring.</p>
+                    <p class="card-text"><strong>spice_master@hold-your-hand.com</strong></p>
+                </div>
+            </div>
+            <div class="card" style="width: 50rem;">
+                <img src="https://i.ibb.co/jHsVBB1/1606682205997-removebg-preview.png" class="card-img-top" alt="diyPackages">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>Afonso Duque</strong></h5>
+                    <p class="card-text">Tech guy. Finds the algorithm to match our partners and your needs.</p>
+                    <br>
+                    <p class="card-text"><strong>match_maker@hold-your-hand.com</strong></p>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer font-small blue">
+
+            <div class="footer-copyright text-center py-3"><small>© 2020 Copyright:</small>
+                <p> <small>alphaDogs</small></p>
+            </div>
+
+        </footer>
+
+
 
 </body>
 </html>

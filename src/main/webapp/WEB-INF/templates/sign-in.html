@@ -20,7 +20,7 @@ body{
 
     header{
         text-align: center;
-        
+
 
 
         width: 100%;
@@ -90,63 +90,73 @@ font-family: 'Montserrat', sans-serif;
 <div id ="navbar">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" th:href="@{/home}">Home</a>
+            <a class="navbar-brand" href="#">Home</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{/packages/all}"><Strong>Packages</Strong></a>
+                        <a class="nav-link" href="#">Packages</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{/packages/create}">Create Package</a>
+                        <a class="nav-link" href="#">Create Package</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{/home/about}">About Us</a>
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacts</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Our Partners</a>
                     </li>
 
                 </ul>
-                <div class="sign"style="position: absolute; right: 0">
-                        <span class="navbar-text">
-                            <button class="btn btn-outline-secondary btn-sm" type="submit" style="float: right">Your Info</button>
-                            <button class="btn btn-outline-secondary btn-sm" type="submit" style="float: right">Sign-out</button>
-                          </span>
 
-                </div>
             </div>
         </div>
     </nav>
 </div>
-
-
-
-<div class="body">
-    <div class="cards">
-        <div class="card" style="width: 50rem;">
-            <img src="https://i.ibb.co/FbD1DNJ/holdinghands.jpg" class="card-img-top" alt="diyPackages">
-            <div class="card-body">
-                <h5 class="card-title">Create Your Package</h5>
-                <p class="card-text">Create your own personalized date package so everything can go exactly as you plan</p>
-                <button type="button" class="btn btn-outline-danger">Create</button>
-            </div>
-        </div>
-
-
-        <div class="card" style="width: 50rem;">
-            <img src="https://i.ibb.co/9vFKPKW/Date-Miradouro.jpg" class="card-img-top" alt="diyPackages">
-            <div class="card-body">
-                <h5 class="card-title">Check Our Packages</h5>
-                <p class="card-text">If you're out of ideas or want to experience something fresh with lots of surprises, check out our packages</p>
-                <a class="btn btn-outline-danger" th:href="@{/packages/all}">Check</a>
-            </div>
-        </div>
-    </div>
-
+<div class="container">
+    <h2>Customer Login</h2>
 </div>
+
+<div class="container row">
+    <div class="col-sm-8">
+        <form class="form-horizontal" th:object="${customer}" th:action="@{/customer}" method="post">
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Email:</label>
+                <div class="col-sm-10">
+                    <input th:errorclass="is-invalid" type="text" class="form-control" th:field="*{email}"/>
+                    <span style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">
+                Email field error messages
+            </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Password:</label>
+                <div class="col-sm-10">
+                    <input th:errorclass="is-invalid" type="text" class="form-control" th:field="*{password}"/>
+                    <span style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">
+                Password field error messages
+            </span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <button type="submit" class="btn btn-outline-info btn-sm" name="action" value="save">Submit</button>
+                    <button type="cancel" class="btn btn-outline-warning btn-sm" name="action" value="cancel">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
 <footer class="page-footer font-small blue">
 
     <div class="footer-copyright text-center py-3"><small>© 2020 Copyright:</small>

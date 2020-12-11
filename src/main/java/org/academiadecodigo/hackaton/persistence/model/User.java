@@ -7,11 +7,20 @@ import javax.persistence.Table;
 @Table(name = "user")
 public class User extends AbstractModel{
 
+    private String username;
     private String name;
     private String email;
     private String phone;
     private String password;
-    private Integer packetid;
+    private Integer packetId;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public String getName() {
         return name;
@@ -46,11 +55,11 @@ public class User extends AbstractModel{
     }
 
     public void setPackageid(Integer packetid) {
-        this.packetid = packetid;
+        this.packetId = packetid;
     }
 
     public Integer getPackageid() {
-        return packetid;
+        return packetId;
     }
 
     @Override

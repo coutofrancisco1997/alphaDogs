@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Pacote extends AbstractModel{
+public class  Pacote extends AbstractModel{
 
     private List<Entertainment> entertainmentList = new ArrayList<>();
 

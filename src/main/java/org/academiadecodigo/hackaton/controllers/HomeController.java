@@ -51,9 +51,19 @@ public class HomeController {
         return "user/sign-up-edit";
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = "/signip")
+    @RequestMapping(method = RequestMethod.POST, path = "/signin/sucess")
     public String signIn(@Valid @ModelAttribute("user") User user, Model model) {
-        return "user/sign-up-edit";
+
+        if(!authService.authenticate(user.getId(), user.getPassword())){
+            return "";
+        }
+
+        return "home";
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/signin")
+    public String showSignIn(Model model) {
+        return "user/sign-in";
     }
 
     @RequestMapping(method = RequestMethod.POST, path = {"/", ""}, params = "action=save")

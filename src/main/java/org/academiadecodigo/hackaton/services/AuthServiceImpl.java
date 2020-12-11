@@ -32,7 +32,7 @@ public class AuthServiceImpl implements AuthService {
 
         User user = userService.get(id);
 
-        if(user.getPassword().equals(password)){
+        if(user!=null && user.getPassword().equals(password)){
             accessingUser=user;
         }
 
