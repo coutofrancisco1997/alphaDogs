@@ -65,9 +65,10 @@ public class SignController {
         if (bindingResult.hasErrors()) {
             return "user/sign-up-edit";
         }
-
+        
+        userService.add(user);
         redirectAttributes.addFlashAttribute("lastAction", "Saved " + user.getName());
-        return "redirect:/home";
+        return "redirect:/home/main";
     }
 
 

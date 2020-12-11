@@ -41,7 +41,6 @@ public class HomeController {
 
     @RequestMapping(method = RequestMethod.GET, path = {"/main"})
     public String main(Model model) {
-        //authService.setAccessingUser(userService.get(1));
         model.addAttribute(authService.getAccessingUser());
         return "home";
     }

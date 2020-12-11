@@ -19,7 +19,7 @@ body{
      @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Montserrat:wght@1000&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Quando&display=swap');
 
-    header{
+header{
     text-align: center;
 
 
@@ -73,6 +73,12 @@ body{
     text-align: center;
 }
 
+.form {
+    padding-left: 31%;
+}
+
+
+
 </style>
 
 <body>
@@ -90,10 +96,13 @@ body{
         </div>
     </header>
 
+    <div class ="title">
     <div class="container">
         <h2>Sign-Up Now</h2>
     </div>
+    </div>
 
+    <div class="form">
     <div class="container row">
         <div class="col-sm-8">
             <form class="form-horizontal" th:object="${user}" th:action="@{/sign/up/save}" method="post">
@@ -150,6 +159,7 @@ body{
                 </div>
             </form>
         </div>
+    </div>
     </div>
     <footer class="page-footer font-small blue">
 
