@@ -47,7 +47,6 @@ public class HomeController {
 
     @RequestMapping(method = RequestMethod.GET, path = {"/home", "/", ""})
     public String home(Model model) {
-        authService.signOut();
         return "main";
     }
 
