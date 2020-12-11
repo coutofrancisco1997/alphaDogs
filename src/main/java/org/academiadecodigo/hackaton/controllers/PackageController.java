@@ -37,6 +37,11 @@ public class PackageController {
         return "ownPack";
     }
 
+    @RequestMapping(method = RequestMethod.GET, path = "/build/done")
+    public String buildPackages(Model model) {
+        return "buildDone";
+    }
+
     @RequestMapping(method = RequestMethod.GET, path = "/eco")
     public String showEcoPackage(Model model) {
         return "EcoDate";
