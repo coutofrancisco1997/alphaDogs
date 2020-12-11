@@ -37,9 +37,9 @@ public class HomeController {
         return "home";
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
+    @RequestMapping(method = RequestMethod.GET, path = {"/home", ""})
     public String home(Model model) {
-        return "main";
+        return "home";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = {"/about"})
