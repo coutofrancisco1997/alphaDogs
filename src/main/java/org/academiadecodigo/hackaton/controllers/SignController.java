@@ -37,14 +37,21 @@ public class SignController {
         return "user/sign-up-edit";
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = "/in/confirmation")
+    @RequestMapping(method = RequestMethod.POST, path = {"/", ""}, params = "action=save")
     public String signIn(@Valid @ModelAttribute("user") User user, Model model) {
 
+        System.out.println(user.getId());
+
         if(!authService.authenticate(user.getId(), user.getPassword())){
-            return "";
+            return "home";
         }
 
         return "redirect:/home/main";
+    }
+
+    @RequestMapping(method = RequestMethod.POST, path = {"/", ""}, params = "action=cancel")
+    public String cancelSignIn() {
+        return "redirect:/home/home";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/in")
@@ -53,7 +60,7 @@ public class SignController {
         return "user/sign-in";
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = {"/up/save"}, params = "action=save")
+    @RequestMapping(method = RequestMethod.POST, path = {"/", ""}, params = "action=save")
     public String saveCustomer(@Valid @ModelAttribute("user") User user, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
         if (bindingResult.hasErrors()) {
@@ -65,7 +72,7 @@ public class SignController {
     }
 
 
-    @RequestMapping(method = RequestMethod.POST, path = {"/up/cancel"}, params = "action=cancel")
+    @RequestMapping(method = RequestMethod.POST, path = {"/", ""}, params = "action=cancel")
     public String cancelSaveCustomer() {
         return "redirect:/user/sign-up-edit";
     }
