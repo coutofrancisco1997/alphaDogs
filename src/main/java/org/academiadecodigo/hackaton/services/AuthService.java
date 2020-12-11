@@ -22,4 +22,6 @@ public interface AuthService {
      * @return the customer
      */
     User getAccessingUser();
+
+    void signOut();
 }

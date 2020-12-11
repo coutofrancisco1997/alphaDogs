@@ -49,6 +49,7 @@ public class SignController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/in")
     public String showSignIn(Model model) {
+        model.addAttribute("user", new User());
         return "user/sign-in";
     }
 

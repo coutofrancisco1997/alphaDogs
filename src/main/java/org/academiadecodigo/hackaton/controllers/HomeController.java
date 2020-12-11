@@ -32,13 +32,14 @@ public class HomeController {
         this.userService = userService;
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = {"/main", ""})
+    @RequestMapping(method = RequestMethod.GET, path = {"/main"})
     public String main(Model model) {
         return "home";
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = {"/home", ""})
+    @RequestMapping(method = RequestMethod.GET, path = {"/home", "/", ""})
     public String home(Model model) {
+        authService.signOut();
         return "main";
     }
 

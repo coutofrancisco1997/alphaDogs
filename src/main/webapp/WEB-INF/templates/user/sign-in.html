@@ -124,13 +124,13 @@ font-family: 'Montserrat', sans-serif;
 
 <div class="container row">
     <div class="col-sm-8">
-        <form class="form-horizontal" th:object="${customer}" th:action="@{/customer}" method="post">
+        <form class="form-horizontal" th:object="${user}" th:action="@{/WEB-INF/templates/user}" method="post">
 
             <div class="form-group">
-                <label class="col-sm-2 control-label">Email:</label>
+                <label class="col-sm-2 control-label">ID:</label>
                 <div class="col-sm-10">
-                    <input th:errorclass="is-invalid" type="text" class="form-control" th:field="*{email}"/>
-                    <span style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">
+                    <input th:errorclass="is-invalid" type="text" class="form-control" th:field="*{id}"/>
+                    <span style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{id}">
                 Email field error messages
             </span>
                 </div>
@@ -141,7 +141,7 @@ font-family: 'Montserrat', sans-serif;
                 <div class="col-sm-10">
                     <input th:errorclass="is-invalid" type="text" class="form-control" th:field="*{password}"/>
                     <span style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">
-                Password field error messages
+                        Password field error messages
             </span>
                 </div>
             </div>
