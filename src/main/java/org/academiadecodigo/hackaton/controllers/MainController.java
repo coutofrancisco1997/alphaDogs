@@ -475,9 +475,6 @@ public class MainController {
         entertainmentService.add(crazy);
 
 
-
-/*
-
         Pact eco = new Pact();
         eco.addEntertainment(nature7);
         eco.addEntertainment(tibatanos);
@@ -576,6 +573,6 @@ public class MainController {
 
         drug.addEntertainment(graca);
         packageService.add(drug);
-*/
+
     }
 }

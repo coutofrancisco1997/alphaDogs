@@ -10,16 +10,25 @@
     <title>Customer</title>
 </head>
 <style>
+body{
+        background-image: url(https://i.ibb.co/pj3ZKDP/d6ji3qh-1beb5458-4675-49b3-aa00-a8c31a09632c.jpg);
+        border-radius: 50%;
+    }
+
+     @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Montserrat:wght@1000&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Quando&display=swap');
+
     header{
     text-align: center;
-    background-color: beige;
+
 
 
     width: 100%;
     padding-top: 3%;
     padding-bottom: 3%;
     top: 0;
-    
+    font-family: 'Montserrat', sans-serif;
+
 }
 .card{
     width: 2500em;
@@ -39,12 +48,37 @@
     padding-left: 20%;
     display: flex;
     float: center;
-    clear: none; 
+    clear: none;
+        font-family: 'Quando', serif;
+
+}
+.option{
+    text-align: center;
+}
+
+.button{
+    text-align: center;
+    font-family: 'Quando', serif;}
+
+
+.page-footer{
+    font-family: 'Quando', serif;
+    font-size: 12px;
+}
+
+.card-text{
+    text-align: center;
+}
+
+.title{
+    text-align: center;
 }
 </style>
 <body>
 
     <header>
+        <img class="logo" src="https://i.ibb.co/d0DP7sw/4dbb718ad6d486a1aa9677bf9e4959b6.png" width="10%">
+
         <div id="title">
             <div class = "main title">
                 <h1>I Want To Hold Your Hand</h1>
@@ -79,8 +113,8 @@
             </li>
             <div class="sign"style="position: absolute; right: 0">
                 <span class="navbar-text">
-                    <button class="btn btn-outline-danger" type="submit" style="float: right">Sign out</button>
-                  </span>
+                    <button class="btn btn-outline-secondary btn-sm" type="submit" style="float: right">Sign-out</button>
+                </span>
 
             </div>
         </div>
@@ -138,12 +172,20 @@
 
     <div class="row">
         <div class="col-sm-3">
-            <button type="submit" class="btn btn-outline-info btn-sm" name="action" value="save">Edit</button>
-            <button type="cancel" class="btn btn-outline-warning btn-sm" name="action" value="cancel">Choose Package</button>
+            <a class="nav-link" th:href="@{/user/signup}"><button type="button" class="btn btn-outline-secondary btn-sm">Edit</button>
+            <a class="nav-link" th:href="@{/packages/all}"><button type="button" class="btn btn-outline-secondary btn-sm">Choose Package</button></a>
         </div>
     </div>
 
 </div>
+    <footer class="page-footer font-small blue">
+
+        <div class="footer-copyright text-center py-3"><small>© 2020 Copyright:</small>
+            <p> <small>alphaDogs</small></p>
+        </div>
+
+    </footer>
+
     
 </body>
 </html>
