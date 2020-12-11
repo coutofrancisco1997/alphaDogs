@@ -125,13 +125,13 @@ font-family: 'Montserrat', sans-serif;
 <div class="container row">
     <div class="col-sm-8">
 
-        <form class="form-horizontal" th:object="${user}" th:action="@{/user}" method="post">
+        <form class="form-horizontal" th:object="${user}" th:action="@{/sign/in/auth}" method="post">
 
             <div class="form-group">
                 <label class="col-sm-2 control-label">ID:</label>
                 <div class="col-sm-10">
                     <input th:errorclass="is-invalid" type="text" class="form-control" th:field="*{id}"/>
-                    <span style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{id}">
+                    <span style="color:red" th:if="${#fields.hasErrors('id')}" th:errors="*{id}">
                          Email field error messages
                     </span>
                 </div>
@@ -149,7 +149,8 @@ font-family: 'Montserrat', sans-serif;
 
             <div class="row">
                 <div class="col-sm-3">
-                    <a class="btn btn-outline-info btn-sm" th:href="@{/home/main}">Submit</a>
+                    <!--<a class="btn btn-outline-info btn-sm" th:href="@{/home/main}">Submit</a>-->
+                    <button type="submit" class="btn btn-outline-secondary btn-sm" name="action" value="save">Submit</button>
                     <button type="cancel" class="btn btn-outline-warning btn-sm" name="action" value="cancel">Cancel</button>
                 </div>
             </div>

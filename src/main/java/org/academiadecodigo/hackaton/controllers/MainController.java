@@ -44,8 +44,8 @@ public class MainController {
         if(dataInitialized){
             return;
         }
-
         dataInitialized=true;
+
         User user = new User();
         user.setName("Batata");
         user.setEmail("mail@gmail.com");
@@ -216,45 +216,44 @@ public class MainController {
         Entertainment nature1 = new PreDate();
         nature1.setName("Nossa da Nossa Senhora do Monte Viewpoint");
         nature1.setWorkingHours("Always Open");
-        nature.setClosed("Always Open");
+        nature1.setClosed("Always Open");
         entertainmentService.add(nature1);
 
         Entertainment nature2 = new PreDate();
         nature2.setName("Graça Viewpoint");
         nature2.setWorkingHours("12h - 00h");
-        nature.setClosed("Always Open");
+        nature2.setClosed("Always Open");
         entertainmentService.add(nature2);
 
         Entertainment nature3 = new PreDate();
         nature3.setName("Torel Garden");
         nature3.setWorkingHours("06h - 22h");
-        nature.setClosed("Always Open");
+        nature3.setClosed("Always Open");
         entertainmentService.add(nature3);
 
         Entertainment nature4 = new PreDate();
         nature4.setName("Ribeira das Naus");
         nature4.setWorkingHours("Always Open");
-        nature.setClosed("Always Open");
+        nature4.setClosed("Always Open");
         entertainmentService.add(nature4);
 
         Entertainment gulbenkian = new PreDate();
         gulbenkian.setName("Gulbenkian Garden");
         gulbenkian.setWorkingHours("08h - 19h30");
-        nature.setClosed("Always Open");
+        gulbenkian.setClosed("Always Open");
         entertainmentService.add(gulbenkian);
 
         Entertainment nature6 = new PreDate();
         nature6.setName("Adamastor Viewpoint");
         nature6.setWorkingHours("08h - 23h");
-        nature.setClosed("Always Open");
+        nature6.setClosed("Always Open");
         entertainmentService.add(nature6);
 
         Entertainment nature7 = new PreDate();
-        nature6.setName("Monsanto Forest Park");
-        nature6.setWorkingHours("08h - 23h");
-        nature.setClosed("Always Open");
+        nature7.setName("Monsanto Forest Park");
+        nature7.setWorkingHours("08h - 23h");
+        nature7.setClosed("Always Open");
         entertainmentService.add(nature7);
-
 
 
         Entertainment allFlowers = new PreDate();

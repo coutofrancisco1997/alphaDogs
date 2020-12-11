@@ -37,16 +37,14 @@ public class SignController {
         return "user/sign-up-edit";
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = {"/", ""}, params = "action=save")
+    @RequestMapping(method = RequestMethod.POST, path = {"/in/auth"}, params = "action=save")
     public String signIn(@Valid @ModelAttribute("user") User user, Model model) {
 
-        System.out.println(user.getId());
-
-        if(!authService.authenticate(user.getId(), user.getPassword())){
-            return "home";
+        if(authService.authenticate(user.getId())){
+            return "redirect:/home/main";
         }
 
-        return "redirect:/home/main";
+        return "home";
     }
 
     @RequestMapping(method = RequestMethod.POST, path = {"/", ""}, params = "action=cancel")
