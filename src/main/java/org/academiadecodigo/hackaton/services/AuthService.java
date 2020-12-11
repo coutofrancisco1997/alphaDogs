@@ -24,4 +24,6 @@ public interface AuthService {
     User getAccessingUser();
 
     void signOut();
+
+    void setAccessingUser(User user);
 }

@@ -34,6 +34,7 @@ public class HomeController {
 
     @RequestMapping(method = RequestMethod.GET, path = {"/main"})
     public String main(Model model) {
+
         return "home";
     }
 

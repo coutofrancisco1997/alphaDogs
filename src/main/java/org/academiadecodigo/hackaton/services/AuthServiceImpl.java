@@ -51,4 +51,9 @@ public class AuthServiceImpl implements AuthService {
     public void signOut() {
         accessingUser=null;
     }
+
+    @Override
+    public void setAccessingUser(User user) {
+        accessingUser=user;
+    }
 }
