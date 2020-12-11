@@ -54,13 +54,14 @@ public class SignController {
         return "redirect:/home/home";
     }
 
+
     @RequestMapping(method = RequestMethod.GET, path = "/in")
     public String showSignIn(Model model) {
         model.addAttribute("user", new User());
         return "user/sign-in";
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = {"/", ""}, params = "action=save")
+    @RequestMapping(method = RequestMethod.POST, path = {"/sign-up"}, params = "action=save")
     public String saveCustomer(@Valid @ModelAttribute("user") User user, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
         if (bindingResult.hasErrors()) {
@@ -72,7 +73,7 @@ public class SignController {
     }
 
 
-    @RequestMapping(method = RequestMethod.POST, path = {"/", ""}, params = "action=cancel")
+    @RequestMapping(method = RequestMethod.POST, path = {"/cancel"}, params = "action=cancel")
     public String cancelSaveCustomer() {
         return "redirect:/user/sign-up-edit";
     }
