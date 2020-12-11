@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 public class Restaurant extends Entertainment {
 
     @Override
-    public EntertainmentType getEntertainmentType() {
+    public EntertainmentType getType() {
         return EntertainmentType.RESTAURANT;
     }
 }

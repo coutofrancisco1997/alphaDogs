@@ -43,7 +43,7 @@ public class EntertainmentServiceImpl implements EntertainmentService {
         List<Entertainment> mapList = list();
 
         for (Entertainment entertainment: mapList) {
-            if(entertainment.getEntertainmentType()==entertainmentType){
+            if(entertainment.getType()==entertainmentType){
                 newList.add(entertainment);
             }
         }
