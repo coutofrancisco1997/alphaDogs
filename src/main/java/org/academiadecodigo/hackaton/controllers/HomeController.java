@@ -48,4 +48,9 @@ public class HomeController {
     public String aboutUs() {
         return "about-us";
     }
+
+    @RequestMapping(method = RequestMethod.GET, path = {"/allPartners"})
+    public String allPartners() {
+        return "allPartners";
+    }
 }

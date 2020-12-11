@@ -16,7 +16,7 @@ body{
     }
 
      @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Montserrat:wght@1000&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Quando&display=swap');
+     @import url('https://fonts.googleapis.com/css2?family=Quando&display=swap');
 
     header{
     text-align: center;
@@ -89,28 +89,27 @@ body{
         </div>
     </header>
 
-    <div id="navbar">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-        <a class="navbar-brand" th:href="@{/home}">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/packages/all}">Packages</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/packages/create}">Create Package</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" th:href="@{/home/about}">About us</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Our Partners</a>
-            </li>
+    <div id ="navbar">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" th:href="@{/home/main}">Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/packages/all}"><Strong>Packages</Strong></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/packages/create}">Create Package</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/home/about}">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/home/allPartners}">Our Partners</a>
+                        </li>
             <div class="sign"style="position: absolute; right: 0">
                 <span class="navbar-text">
                     <button class="btn btn-outline-secondary btn-sm" type="submit" style="float: right">Sign-out</button>
@@ -126,7 +125,7 @@ body{
 <div class="container">
     
 
-    <h2 th:text="${'Welcome ' + user.name}">Welcome Customer - place holder</h2>
+    <h2 th:text="${'Welcome ' + user.name}">Welcome Customer</h2>
 
     <div class="col-sm-8">
         <form class="form-horizontal">
@@ -151,7 +150,7 @@ body{
             </div>
         </form>
     </div>
-
+<!--
     <div class="row">
         <div class="col-sm-4">
             <div th:if="${not #lists.isEmpty(reservations)}">
@@ -169,7 +168,7 @@ body{
             </div>
         </div>
     </div>
-
+-->
     <div class="row">
         <div class="col-sm-3">
             <a class="nav-link" th:href="@{/user/signup}"><button type="button" class="btn btn-outline-secondary btn-sm">Edit</button>

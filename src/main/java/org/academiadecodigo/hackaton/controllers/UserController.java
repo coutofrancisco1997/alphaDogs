@@ -32,13 +32,12 @@ public class UserController {
         this.authService = authService;
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/{id}")
-    public String showUser(@PathVariable Integer id, Model model) {
-        User user = userService.get(id);
+    @RequestMapping(method = RequestMethod.GET, path = "/show")
+    public String showUser(Model model) {
+        User user = authService.getAccessingUser();
         model.addAttribute("user", user);
         return "user/show";
     }
-
 
     @RequestMapping(method = RequestMethod.GET, path = "/addPacket")
     public String addPacote(Model model){
