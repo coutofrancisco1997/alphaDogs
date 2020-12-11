@@ -101,10 +101,11 @@ button{
             <li class="nav-item">
                 <a class="nav-link" th:href="@{/home/allPartners}">Our Partners</a>
             </li>
+
             <div class="sign"style="position: absolute; right: 0">
                 <span class="navbar-text">
-                    <button class="btn btn-outline-secondary btn-sm" type="submit" style="float: right">Your Info</button>
-                    <button class="btn btn-outline-secondary btn-sm" type="submit" style="float: right">Sign-out</button>
+                    <a class="btn btn-outline-secondary btn-sm" th:href="@{/home/home}" style="float: right">Sign-out</a>
+                            <a class="btn btn-outline-secondary btn-sm" th:href="@{/user/show}" style="float: right">Your Info</a>
                   </span>
             </div>
         </div>
