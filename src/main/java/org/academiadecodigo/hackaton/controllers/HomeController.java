@@ -3,6 +3,7 @@ package org.academiadecodigo.hackaton.controllers;
 import org.academiadecodigo.hackaton.persistence.model.User;
 import org.academiadecodigo.hackaton.persistence.model.entertainment.EntertainmentType;
 import org.academiadecodigo.hackaton.services.AuthService;
+import org.academiadecodigo.hackaton.services.EntertainmentService;
 import org.academiadecodigo.hackaton.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,7 @@ public class HomeController {
 
     private AuthService authService;
     private UserService userService;
+    private EntertainmentService entertainmentService;
 
     @Autowired
     public void setAuthService(AuthService authService) {
@@ -30,6 +32,11 @@ public class HomeController {
     @Autowired
     public void setUserService(UserService userService) {
         this.userService = userService;
+    }
+
+    @Autowired
+    public void setEntertainmentService(EntertainmentService entertainmentService) {
+        this.entertainmentService = entertainmentService;
     }
 
     @RequestMapping(method = RequestMethod.GET, path = {"/main"})
@@ -51,7 +58,8 @@ public class HomeController {
     }
 
     @RequestMapping(method = RequestMethod.GET, path = {"/allPartners"})
-    public String allPartners() {
+    public String allPartners(Model model) {
+        model.addAttribute("entertainments", entertainmentService.list());
         return "allPartners";
     }
 }
