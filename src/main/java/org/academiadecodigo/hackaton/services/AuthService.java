@@ -14,7 +14,7 @@ public interface AuthService {
      *
      * @return {@code true} if authentication was successful
      */
-    boolean authenticate(Integer id);
+    boolean authenticate(Integer id, String password);
 
     /**
      * Gets the accessing customer
