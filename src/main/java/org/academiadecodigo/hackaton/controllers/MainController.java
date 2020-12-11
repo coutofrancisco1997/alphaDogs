@@ -67,6 +67,7 @@ public class MainController {
         loco.setPhone("213951861");
         loco.setWorkingHours("19h - 23h");
         loco.setClosed("Sunday - Monday");
+        entertainmentService.add(loco);
 
         Entertainment pastel = new Restaurant();
         pastel.setName("Casa Portuguesa Pastel Bacalhau");
@@ -75,6 +76,7 @@ public class MainController {
         pastel.setPhone("916486888");
         pastel.setWorkingHours("10h - 22h");
         pastel.setClosed("Always Open");
+        entertainmentService.add(pastel);
 
         Entertainment maneiras = new Restaurant();
         maneiras.setName("100 Maneiras");
@@ -83,14 +85,16 @@ public class MainController {
         maneiras.setPhone("910918181");
         maneiras.setWorkingHours("19h - 22h30");
         maneiras.setClosed("Always Open");
+        entertainmentService.add(maneiras);
 
-        Entertainment restaurant3 = new Restaurant();
-        restaurant3.setName("Mini Bar");
-        restaurant3.setAvgPrice(60);
-        restaurant3.setEmail("minibar@gmail.com");
-        restaurant3.setPhone("211305393");
-        restaurant3.setWorkingHours("18h45 - 22h30");
-        restaurant3.setClosed("Always Open");
+        Entertainment mini = new Restaurant();
+        mini.setName("Mini Bar");
+        mini.setAvgPrice(60);
+        mini.setEmail("minibar@gmail.com");
+        mini.setPhone("211305393");
+        mini.setWorkingHours("18h45 - 22h30");
+        mini.setClosed("Always Open");
+        entertainmentService.add(mini);
 
         Entertainment restaurant4 = new Restaurant();
         restaurant4.setName("Kanazawa");
@@ -99,6 +103,7 @@ public class MainController {
         restaurant4.setPhone("213010292");
         restaurant4.setWorkingHours("19h - 23h");
         restaurant4.setClosed("Sunday");
+        entertainmentService.add(restaurant4);
 
         Entertainment restaurant5 = new Restaurant();
         restaurant5.setName("Gambrinus");
@@ -107,6 +112,7 @@ public class MainController {
         restaurant5.setPhone("213421466");
         restaurant5.setWorkingHours("12h - 22h30");
         restaurant5.setClosed("Saturday - Sunday");
+        entertainmentService.add(restaurant5);
 
         Entertainment tibatanos = new Restaurant();
         tibatanos.setName("Os Tibetanos");
@@ -115,6 +121,7 @@ public class MainController {
         tibatanos.setPhone("952345fdsdsf");
         tibatanos.setWorkingHours("10:00 - 22:00");
         tibatanos.setClosed("Sunday");
+        entertainmentService.add(tibatanos);
 
         Entertainment restaurant7 = new Restaurant();
         restaurant7.setName("Belcanto");
@@ -123,6 +130,7 @@ public class MainController {
         restaurant7.setPhone("213420607");
         restaurant7.setWorkingHours("12h30 - 15h, 18h45 - 22h30");
         restaurant7.setClosed("Sunday - Monday");
+        entertainmentService.add(restaurant7);
 
         Entertainment fifty = new Restaurant();
         fifty.setName("50 Seconds");
@@ -131,6 +139,7 @@ public class MainController {
         fifty.setPhone("211525380");
         fifty.setWorkingHours("12h - 15h, 19h - 23h");
         fifty.setClosed("Sunday - Monday");
+        entertainmentService.add(fifty);
 
         Entertainment restaurant9 = new Restaurant();
         restaurant9.setName("SUD Lisboa");
@@ -139,6 +148,7 @@ public class MainController {
         restaurant9.setPhone("211592700");
         restaurant9.setWorkingHours("12h - 22h");
         restaurant9.setClosed("Always Open");
+        entertainmentService.add(restaurant9);
 
         Entertainment restaurant10 = new Restaurant();
         restaurant10.setName("Faz Figura");
@@ -147,6 +157,7 @@ public class MainController {
         restaurant10.setPhone("218868981");
         restaurant10.setWorkingHours("12h30 - 15h, 19h - 23h");
         restaurant10.setClosed("Monday");
+        entertainmentService.add(restaurant10);
 
         Entertainment restaurant11 = new Restaurant();
         restaurant11.setName("JNCquoi");
@@ -155,6 +166,7 @@ public class MainController {
         restaurant11.setPhone("219369900");
         restaurant11.setWorkingHours("12h - 22h30");
         restaurant11.setClosed("Saturday - Sunday");
+        entertainmentService.add(restaurant11);
 
         Entertainment restaurant12 = new Restaurant();
         restaurant12.setName("Faia");
@@ -163,6 +175,7 @@ public class MainController {
         restaurant12.setPhone("213426742");
         restaurant12.setWorkingHours("20h - 02h");
         restaurant12.setClosed("Sunday");
+        entertainmentService.add(restaurant12);
 
         Entertainment vinho = new Restaurant();
         vinho.setName("Sr. Vinho");
@@ -171,6 +184,7 @@ public class MainController {
         vinho.setPhone("213972681");
         vinho.setWorkingHours("20h - 02h");
         vinho.setClosed("Sunday");
+        entertainmentService.add(vinho);
 
         Entertainment restaurant14 = new Restaurant();
         restaurant14.setName("Loja das Conservas");
@@ -179,6 +193,7 @@ public class MainController {
         restaurant14.setPhone("911181210");
         restaurant14.setWorkingHours("10h - 20h");
         restaurant14.setClosed("Always Open");
+        entertainmentService.add(restaurant14);
 
         Entertainment restaurant15 = new Restaurant();
         restaurant15.setName("Solar dos Presuntos");
@@ -187,6 +202,7 @@ public class MainController {
         restaurant15.setPhone("213424253");
         restaurant15.setWorkingHours("12h - 22h30");
         restaurant15.setClosed("Sunday");
+        entertainmentService.add(restaurant15);
 
 
 
@@ -195,41 +211,49 @@ public class MainController {
         nature.setName("Estrela Garden");
         nature.setWorkingHours("06h - 00h");
         nature.setClosed("Always Open");
+        entertainmentService.add(nature);
 
         Entertainment nature1 = new PreDate();
         nature1.setName("Nossa da Nossa Senhora do Monte Viewpoint");
         nature1.setWorkingHours("Always Open");
         nature.setClosed("Always Open");
+        entertainmentService.add(nature1);
 
         Entertainment nature2 = new PreDate();
         nature2.setName("Graça Viewpoint");
         nature2.setWorkingHours("12h - 00h");
         nature.setClosed("Always Open");
+        entertainmentService.add(nature2);
 
         Entertainment nature3 = new PreDate();
         nature3.setName("Torel Garden");
         nature3.setWorkingHours("06h - 22h");
         nature.setClosed("Always Open");
+        entertainmentService.add(nature3);
 
         Entertainment nature4 = new PreDate();
         nature4.setName("Ribeira das Naus");
         nature4.setWorkingHours("Always Open");
         nature.setClosed("Always Open");
+        entertainmentService.add(nature4);
 
         Entertainment gulbenkian = new PreDate();
         gulbenkian.setName("Gulbenkian Garden");
         gulbenkian.setWorkingHours("08h - 19h30");
         nature.setClosed("Always Open");
+        entertainmentService.add(gulbenkian);
 
         Entertainment nature6 = new PreDate();
         nature6.setName("Adamastor Viewpoint");
         nature6.setWorkingHours("08h - 23h");
         nature.setClosed("Always Open");
+        entertainmentService.add(nature6);
 
         Entertainment nature7 = new PreDate();
         nature6.setName("Monsanto Forest Park");
         nature6.setWorkingHours("08h - 23h");
         nature.setClosed("Always Open");
+        entertainmentService.add(nature7);
 
 
 
@@ -237,6 +261,7 @@ public class MainController {
         allFlowers.setName("All Flowers");
         allFlowers.setAvgPrice(20);
         allFlowers.setWorkingHours("Online");
+        entertainmentService.add(allFlowers);
 
         Entertainment service1 = new PreDate();
         service1.setName("Seaventy");
@@ -244,6 +269,7 @@ public class MainController {
         service1.setEmail("@gmail.com");
         service1.setPhone("213424253");
         service1.setWorkingHours("09h - 18h");
+        entertainmentService.add(service1);
 
         Entertainment escape = new PreDate();
         escape.setName("Escape In");
@@ -251,6 +277,7 @@ public class MainController {
         escape.setEmail("@gmail.com");
         escape.setPhone("213424253");
         escape.setWorkingHours("Online");
+        entertainmentService.add(escape);
 
         Entertainment afrodite = new PreDate();
         afrodite.setName("Afrodite Sex Shop");
@@ -258,6 +285,7 @@ public class MainController {
         afrodite.setEmail("@gmail.com");
         afrodite.setPhone("213424253");
         afrodite.setWorkingHours("Online");
+        entertainmentService.add(afrodite);
 
         Entertainment service4 = new PreDate();
         service4.setName("Amsterdam Store Lisboa");
@@ -265,6 +293,7 @@ public class MainController {
         service4.setEmail("@gmail.com");
         service4.setPhone("213424253");
         service4.setWorkingHours("10h - 19h");
+        entertainmentService.add(service4);
 
         Entertainment service5 = new PreDate();
         service5.setName("Cannabis Care Portugal");
@@ -272,6 +301,7 @@ public class MainController {
         service5.setEmail("@gmail.com");
         service5.setPhone("213424253");
         service5.setWorkingHours("10h - 19h");
+        entertainmentService.add(service5);
 
         Entertainment service6 = new PreDate();
         service6.setName("Bike Bar Tours");
@@ -279,6 +309,7 @@ public class MainController {
         service6.setEmail("@gmail.com");
         service6.setPhone("213424253");
         service6.setWorkingHours("08h - 22h");
+        entertainmentService.add(service6);
 
 
 
@@ -289,6 +320,7 @@ public class MainController {
         culture.setEmail("solardospresuntos@gmail.com");
         culture.setPhone("213424253");
         culture.setWorkingHours("12h - 22h30");
+        entertainmentService.add(culture);
 
         Entertainment culture1 = new PreDate();
         culture1.setName("Oceanarium");
@@ -296,6 +328,7 @@ public class MainController {
         culture1.setEmail("solardospresuntos@gmail.com");
         culture1.setPhone("213424253");
         culture1.setWorkingHours("12h - 22h30");
+        entertainmentService.add(culture1);
 
         Entertainment tiles = new PreDate();
         tiles.setName("Tiles Museum");
@@ -303,6 +336,7 @@ public class MainController {
         tiles.setEmail("solardospresuntos@gmail.com");
         tiles.setPhone("213424253");
         tiles.setWorkingHours("12h - 22h30");
+        entertainmentService.add(tiles);
 
         Entertainment culture3 = new PreDate();
         culture3.setName("Jerónimos Monasterium");
@@ -310,6 +344,7 @@ public class MainController {
         culture3.setEmail("solardospresuntos@gmail.com");
         culture3.setPhone("213424253");
         culture3.setWorkingHours("12h - 22h30");
+        entertainmentService.add(culture3);
 
         Entertainment culture4 = new PreDate();
         culture4.setName("Sé Cathedral");
@@ -317,6 +352,7 @@ public class MainController {
         culture4.setEmail("solardospresuntos@gmail.com");
         culture4.setPhone("213424253");
         culture4.setWorkingHours("12h - 22h30");
+        entertainmentService.add(culture4);
 
         Entertainment culture5 = new PreDate();
         culture5.setName("Coach Museum");
@@ -324,6 +360,7 @@ public class MainController {
         culture5.setEmail("solardospresuntos@gmail.com");
         culture5.setPhone("213424253");
         culture5.setWorkingHours("12h - 22h30");
+        entertainmentService.add(culture5);
 
         Entertainment culture6 = new PreDate();
         culture6.setName("Navy Museum");
@@ -331,6 +368,7 @@ public class MainController {
         culture6.setEmail("solardospresuntos@gmail.com");
         culture6.setPhone("213424253");
         culture6.setWorkingHours("12h - 22h30");
+        entertainmentService.add(culture6);
 
         Entertainment culture7 = new PreDate();
         culture7.setName("Ladra Street Fair");
@@ -338,6 +376,7 @@ public class MainController {
         culture7.setEmail("solardospresuntos@gmail.com");
         culture7.setPhone("213424253");
         culture7.setWorkingHours("12h - 22h30");
+        entertainmentService.add(culture7);
 
 
 
@@ -347,6 +386,7 @@ public class MainController {
         transport.setEmail("@mail.com");
         transport.setPhone("952345");
         transport.setWorkingHours("10:00 - 22:00");
+        entertainmentService.add(transport);
 
         Entertainment transport1 = new Transport();
         transport1.setName("Uber Black");
@@ -354,6 +394,7 @@ public class MainController {
         transport1.setEmail("@mail.com");
         transport1.setPhone("952345");
         transport1.setWorkingHours("10:00 - 22:00");
+        entertainmentService.add(transport1);
 
         Entertainment transport2 = new Transport();
         transport2.setName("Uber X");
@@ -361,6 +402,7 @@ public class MainController {
         transport2.setEmail("@mail.com");
         transport2.setPhone("952345");
         transport2.setWorkingHours("10:00 - 22:00");
+        entertainmentService.add(transport2);
 
         Entertainment transport3 = new Transport();
         transport3.setName("E-Cooltra");
@@ -368,6 +410,7 @@ public class MainController {
         transport3.setEmail("@mail.com");
         transport3.setPhone("952345");
         transport3.setWorkingHours("10:00 - 22:00");
+        entertainmentService.add(transport3);
 
         Entertainment transport4 = new Transport();
         transport4.setName("VIP Limousines");
@@ -375,6 +418,7 @@ public class MainController {
         transport4.setEmail("@mail.com");
         transport4.setPhone("952345");
         transport4.setWorkingHours("10:00 - 22:00");
+        entertainmentService.add(transport4);
 
         Entertainment transport5 = new Transport();
         transport5.setName("Gira Bikes");
@@ -382,6 +426,7 @@ public class MainController {
         transport5.setEmail("@mail.com");
         transport5.setPhone("952345");
         transport5.setWorkingHours("10:00 - 22:00");
+        entertainmentService.add(transport5);
 
 
 
@@ -392,6 +437,7 @@ public class MainController {
         ritz.setEmail("@mail.com");
         ritz.setPhone("952345");
         ritz.setWorkingHours("10:00 - 22:00");
+        entertainmentService.add(ritz);
 
         Entertainment posDate1 = new PosDate();
         posDate1.setName("Tivoli Hotel");
@@ -399,6 +445,7 @@ public class MainController {
         posDate1.setEmail("@mail.com");
         posDate1.setPhone("952345");
         posDate1.setWorkingHours("10:00 - 22:00");
+        entertainmentService.add(posDate1);
 
         Entertainment chapito = new PosDate();
         chapito.setName("Chapitô");
@@ -406,6 +453,7 @@ public class MainController {
         chapito.setEmail("@mail.com");
         chapito.setPhone("9523454234");
         chapito.setWorkingHours("10:00 - 22:00");
+        entertainmentService.add(chapito);
 
         Entertainment posDate3 = new PosDate();
         posDate3.setName("Loucos e Sonhadores");
@@ -413,6 +461,7 @@ public class MainController {
         posDate3.setEmail("@mail.com");
         posDate3.setPhone("952523525");
         posDate3.setWorkingHours("10:00 - 22:00");
+        entertainmentService.add(posDate3);
 
         Entertainment silk = new PosDate();
         silk.setName("Silk Club");
@@ -420,6 +469,7 @@ public class MainController {
         silk.setEmail("@mail.com");
         silk.setPhone("915632624");
         silk.setWorkingHours("10:00 - 22:00");
+        entertainmentService.add(silk);
 
         Entertainment posDate5 = new PosDate();
         posDate5.setName("Foxtrot Bar");
@@ -427,6 +477,7 @@ public class MainController {
         posDate5.setEmail("@mail.com");
         posDate5.setPhone("9274674r4");
         posDate5.setWorkingHours("10:00 - 22:00");
+        entertainmentService.add(posDate5);
 
         Entertainment posDate6 = new PosDate();
         posDate6.setName("Pavilhão Chinês");
@@ -434,6 +485,7 @@ public class MainController {
         posDate6.setEmail("@mail.com");
         posDate6.setPhone("952345");
         posDate6.setWorkingHours("10:00 - 22:00");
+        entertainmentService.add(posDate6);
 
         Entertainment crazy = new Crazy();
         crazy.setName("Demais");
@@ -441,37 +493,6 @@ public class MainController {
         crazy.setEmail("@mail.com");
         crazy.setPhone("952345");
         crazy.setWorkingHours("10:00 - 22:00");
-
-        entertainmentService.add(loco);
-        entertainmentService.add(pastel);
-        entertainmentService.add(maneiras);
-        entertainmentService.add(restaurant3);
-        entertainmentService.add(restaurant4);
-        entertainmentService.add(restaurant15);
-        entertainmentService.add(culture7);
-
-        entertainmentService.add(nature1);
-        entertainmentService.add(nature2);
-        entertainmentService.add(nature3);
-        entertainmentService.add(nature4);
-        entertainmentService.add(gulbenkian);
-        entertainmentService.add(nature6);
-        entertainmentService.add(nature7);
-
-        entertainmentService.add(transport);
-        entertainmentService.add(transport1);
-        entertainmentService.add(transport2);
-        entertainmentService.add(transport3);
-        entertainmentService.add(transport4);
-        entertainmentService.add(transport5);
-
-        entertainmentService.add(ritz);
-        entertainmentService.add(posDate1);
-        entertainmentService.add(chapito);
-        entertainmentService.add(posDate3);
-        entertainmentService.add(silk);
-        entertainmentService.add(posDate5);
-
         entertainmentService.add(crazy);
 
 
