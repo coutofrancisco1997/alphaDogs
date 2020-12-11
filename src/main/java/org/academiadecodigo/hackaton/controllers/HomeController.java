@@ -32,11 +32,13 @@ public class HomeController {
         this.userService = userService;
     }
 
+    @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
+    public String main(Model model) {
+        return "main";
+    }
+
     @RequestMapping(method = RequestMethod.GET, path = {"/main", ""})
     public String home(Model model) {
-        model.addAttribute("user", userService.get(1));
-        model.addAttribute("user1", userService.get(2));
-        model.addAttribute("users", userService.list());
         return "home";
     }
 
@@ -44,6 +46,7 @@ public class HomeController {
     public String aboutUs() {
         return "about-us";
     }
+
 
     @RequestMapping(method = RequestMethod.GET, path = "/signup")
     public String signUpUser(Model model) {
@@ -58,7 +61,7 @@ public class HomeController {
             return "";
         }
 
-        return "home";
+        return "redirect:/home/main";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/signin")
