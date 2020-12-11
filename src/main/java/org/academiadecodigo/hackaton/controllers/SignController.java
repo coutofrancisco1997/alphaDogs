@@ -45,7 +45,7 @@ public class SignController {
             return "redirect:/home/main";
         }
 
-        return "home";
+        return "user/sign-in";
     }
 
     @RequestMapping(method = RequestMethod.POST, path = {"/in/auth"}, params = "action=cancel")

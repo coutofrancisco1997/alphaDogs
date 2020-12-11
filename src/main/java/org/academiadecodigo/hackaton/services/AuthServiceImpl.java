@@ -24,15 +24,15 @@ public class AuthServiceImpl implements AuthService {
         this.userService = userService;
     }
 
-    /**
-     * @see AuthService#authenticate(Integer,String)
-     */
     @Override
     public boolean authenticate(Integer id) {
 
-        accessingUser = userService.get(id);
+        if(userService.get(id)==null){
+            return false;
+        }
 
-        return accessingUser != null;
+        accessingUser = userService.get(id);
+        return true;
     }
 
     /**
