@@ -32,14 +32,14 @@ public class HomeController {
         this.userService = userService;
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
+    @RequestMapping(method = RequestMethod.GET, path = {"/main", ""})
     public String main(Model model) {
-        return "main";
+        return "home";
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = {"/main", ""})
+    @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
     public String home(Model model) {
-        return "home";
+        return "main";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = {"/about"})
