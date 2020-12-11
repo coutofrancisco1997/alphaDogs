@@ -6,19 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <thymeleaf th:replace="header :: header" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    </head>
     <style>
+    body{
+        background-image: url(https://i.ibb.co/pj3ZKDP/d6ji3qh-1beb5458-4675-49b3-aa00-a8c31a09632c.jpg);
+        border-radius: 50%;
+        font-family: 'Quando', serif;
+
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Montserrat:wght@1000&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Quando&display=swap');
+
         header{
     text-align: center;
-    background-color: beige;
+
     width: 100%;
     padding-top: 3%;
     padding-bottom: 3%;
     top: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 #packageTitle{
-    color: seashell;
-    background-color: seagreen;
-    background-repeat: repeat; 
+
     padding: 2%;
 }
 .card{
@@ -34,7 +44,8 @@
     padding-left: 20%;
     display: flex;
     float: center;
-    clear: none; 
+    clear: none;
+    font-family: 'Quando', serif;
 }
 .card-img-top{
     height: 300px;
@@ -44,13 +55,34 @@
     text-align: center;
     padding: 3%;
 }
+    .button{
+        text-align: center;
+        font-family: 'Quando', serif;}
+
+
+    .page-footer{
+        font-family: 'Quando', serif;
+        font-size: 12px;
+    }
+
+
+    .title{
+        text-align: center;
+    }
+
+    #description{
+    padding: 2%;
+    }
+
 
 
     </style>
 
-</head>
+
 <body>
     <header>
+        <img class="logo" src="https://i.ibb.co/d0DP7sw/4dbb718ad6d486a1aa9677bf9e4959b6.png" width="10%">
+
         <div id="title">
             <div class = "main title">
                 <h1>I Want To Hold Your Hand</h1>
@@ -86,10 +118,10 @@
 
                     </ul>
                     <div class="sign"style="position: absolute; right: 0">
-                            <span class="navbar-text">
-                                <button class="btn btn-outline-danger" type="submit" style="float: right">Sign In </button>
-                                <button class="btn btn-outline-danger" type="submit" style="float: right">Sign up</button>
-                              </span>
+                        <span class="navbar-text">
+                               <button class="btn btn-outline-secondary btn-sm" type="submit" style="float: right">Your Info</button>
+                            <button class="btn btn-outline-secondary btn-sm" type="submit" style="float: right">Sign-out</button>
+                        </span>
 
                     </div>
                 </div>
@@ -107,7 +139,6 @@
             </div>
         </div>
         <div id = "description">
-            <br></br>
             <h5> The Hold Your Hand's Special Drug Package open doors to a safe and responsible Drug Tourism experience. Let us guide into a full day journey dedicated to explore your senses, from beautiful views to delicious and tasty food to visual trippy content that will elevate your trip and let you get to know a differente beautiful Lisbon.</h5>
             <br></br>
             <h6><b>NOTE:</b> We at Hold Your Hands understand that different people want different experiences while on drugs, so this package is flexible. If you would lke to know more options, <a href="https://www.youtube.com/watch?v=HXQUWmXzPeM">click here</a>.</h6>
@@ -121,39 +152,39 @@
         <div class="cards">
 
             <div class="card" style="width: 50rem;">
-                <img src="Resources/Maat.jpg" class="card-img-top" alt="diyPackages">
+                <img src="https://i.ibb.co/bzvdW2z/Maat.jpg" class="card-img-top" alt="diyPackages">
                 <div class="card-body">
                 <h5 class="card-title">Visit @ <b>MAAT</b> contemporary art museum</h5>
                 <p class="card-text">Start your day by visiting one of Lisbon's contemporary art museum, where you can find pieces that will blow your mind. </p>
 
-                <button type="button" class="btn btn-outline-success">View Details</button>
+                <button type="button" class="btn btn-outline-danger">View Details</button>
                 </div>
             </div>
 
             <div class="card" style="width: 50rem;">
-                <img src="Resources/Estufa.jpg" class="card-img-top" alt="diyPackages">
+                <img src="https://i.ibb.co/XtJY5zQ/Estufa.jpg" class="card-img-top" alt="diyPackages">
                 <div class="card-body">
                 <h5 class="card-title">Explore the vegetable world @ <b>Estufa Fria</b></h5>
                 <p class="card-text">Explore the different biomes and hundreds of plants that this hideen place near Parque Eduardo VII has nourishing. </p>
-                <button type="button" class="btn btn-outline-success">View Details</button>
+                <button type="button" class="btn btn-outline-danger">View Details</button>
                 </div>
             </div>
 
             <div class="card" style="width: 50rem;">
-                <img src="Resources/Arroios.jpeg" class="card-img-top" alt="diyPackages">
+                <img src="https://i.ibb.co/G3pQQGJ/Arroios.jpg" class="card-img-top" alt="diyPackages">
                 <div class="card-body">
-                <h5 class="card-title">Dinner @ <b>Mercado de Arroios</b></h5>
+                <h5 class="card-title">Special Dinner @ <b>Mercado de Arroios</b></h5>
                 <p class="card-text">  Get to know the TimeOut "coolest neighborhood in the world" and its multicultural and diverse dinner options.</p>
-                <button type="button" class="btn btn-outline-success">View Details</button>
+                <button type="button" class="btn btn-outline-danger">View Details</button>
                 </div>
             </div>
 
             <div class="card" style="width: 50rem;">
-                <img src="Resources/Graça.jpg" class="card-img-top" alt="diyPackages">
+                <img src="https://i.ibb.co/JWLsLrG/Gra-a.jpg" class="card-img-top" alt="diyPackages">
                 <div class="card-body">
-                <h5 class="card-title">After Dinner @ Graça Viewpoint</h5>
+                <h5 class="card-title">After Dinner @ <b>Graça Viewpoint</b></h5>
                 <p class="card-text">Loose yourself in the Lisbon lights in one of best spots to apreciate its beauty and magic in the city's reference historical place. </p>
-                <button type="button" class="btn btn-outline-success">View Details</button>
+                <button type="button" class="btn btn-outline-danger">View Details</button>
                 </div>
             </div>
 
@@ -165,12 +196,15 @@
 
         <div class="sign">
             <span class="navbar-text">
-                <button type="button" class="btn btn-success">Sign Me In!</button>
+                <button type="button" class="btn btn-danger">Sign Me In!</button>
               </span>
         </div>
+        <footer class="page-footer font-small blue">
 
+            <div class="footer-copyright text-center py-3"><small>© 2020 Copyright:</small>
+                <p> <small>alphaDogs</small></p>
+            </div>
 
-
-
+        </footer>
     </div>
 </body>

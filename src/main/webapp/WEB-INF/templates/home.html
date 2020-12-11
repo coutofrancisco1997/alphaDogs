@@ -112,7 +112,7 @@ font-family: 'Montserrat', sans-serif;
                 </ul>
                 <div class="sign"style="position: absolute; right: 0">
                         <span class="navbar-text">
-                            <div th:text="${'Welcome ' + user.name}"> </div>
+                            <div th:text="${'User ' + user.name}"></div>
                             <a class="btn btn-outline-secondary btn-sm" th:href="@{/home/home}" style="float: right">Sign-out</a>
                             <a class="btn btn-outline-secondary btn-sm" th:href="@{/user/show}" style="float: right">Your Info</a>
                         </span>
