@@ -14,13 +14,14 @@ public class UserServiceImpl implements UserService{
     private Map<Integer, User> userMap = new HashMap<>();
 
     @Override
-    public void add(User user){
+    public User add(User user){
 
         if (user.getId() == null) {
             user.setId(getNextId());
         }
 
         userMap.put(user.getId(), user);
+        return get(user.getId());
     }
 
     @Override

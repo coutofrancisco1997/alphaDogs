@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface UserService {
 
-    void add(User user);
+    User add(User user);
 
     User get(Integer id);
 
