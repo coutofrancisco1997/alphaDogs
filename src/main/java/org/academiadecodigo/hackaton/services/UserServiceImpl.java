@@ -39,6 +39,19 @@ public class UserServiceImpl implements UserService{
         userMap.remove(id);
     }
 
+    @Override
+    public User getByEmail(String email) {
+        List<User> userList = new ArrayList<>(userMap.values());
+
+        for (User user: userList){
+            if(user.getEmail().equals(email)){
+               return user;
+            }
+        }
+
+        return null;
+    }
+
     private Integer getNextId() {
         return userMap.isEmpty() ? 1 : Collections.max(userMap.keySet()) + 1;
     }

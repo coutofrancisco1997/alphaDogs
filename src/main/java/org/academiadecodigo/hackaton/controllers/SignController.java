@@ -41,7 +41,7 @@ public class SignController {
     @RequestMapping(method = RequestMethod.POST, path = {"/in/auth"}, params = "action=save")
     public String signIn(@Valid @ModelAttribute("user") User user) {
 
-        if(authService.authenticate(user.getId(), user.getPassword())){
+        if(authService.authenticate(user.getEmail(), user.getPassword())){
             return "redirect:/home/main";
         }
 
