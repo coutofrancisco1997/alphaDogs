@@ -59,7 +59,7 @@ public class UserController {
     public String editUser(Model model, @PathVariable Integer id) {
         UserDto userDto = userToUserDto.convert(userService.get(id));
         model.addAttribute("user", userDto);
-        return"user/show-edit";
+        return"user/show";
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/edit/save", params = "action=save")
@@ -67,10 +67,6 @@ public class UserController {
 
         if(bindingResult.hasErrors()){
             return "user/show-edit";
-        }
-        
-        if(userDto == null){
-            return "redirect:/home/main";
         }
 
         userService.delete(userDto.getId());
