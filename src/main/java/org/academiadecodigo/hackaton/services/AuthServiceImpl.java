@@ -27,7 +27,6 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public boolean authenticate(String email, String password) {
 
-
         if(userService.getByEmail(email)!=null && userService.getByEmail(email).getPassword().equals(password)){
             accessingUser = userService.getByEmail(email);
             return true;

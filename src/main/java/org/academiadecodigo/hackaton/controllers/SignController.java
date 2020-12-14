@@ -1,5 +1,9 @@
 package org.academiadecodigo.hackaton.controllers;
 
+import org.academiadecodigo.hackaton.commands.SignInUserDto;
+import org.academiadecodigo.hackaton.commands.SignUpUserDto;
+import org.academiadecodigo.hackaton.converter.SignInUserDtoToUser;
+import org.academiadecodigo.hackaton.converter.SignUpUserDtoToUser;
 import org.academiadecodigo.hackaton.persistence.model.User;
 import org.academiadecodigo.hackaton.services.AuthService;
 import org.academiadecodigo.hackaton.services.UserService;
@@ -22,6 +26,9 @@ public class SignController {
     private AuthService authService;
     private UserService userService;
 
+    private SignInUserDtoToUser signInUserDtoToUser;
+    private SignUpUserDtoToUser signUpUserDtoToUser;
+
     @Autowired
     public void setAuthService(AuthService authService) {
         this.authService = authService;
@@ -34,16 +41,15 @@ public class SignController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/up")
     public String signUpUser(Model model) {
-        User user = new User();
-        user.setPassword("");
-        model.addAttribute("user", user);
+        SignUpUserDto signUpUserDto = new SignUpUserDto();
+        model.addAttribute("user", signUpUserDto);
         return "user/sign-up-edit";
     }
 
     @RequestMapping(method = RequestMethod.POST, path = {"/in/auth"}, params = "action=save")
-    public String signIn(@Valid @ModelAttribute("user") User user) {
+    public String signIn(@Valid @ModelAttribute("user") SignInUserDto userDto) {
 
-        if(authService.authenticate(user.getEmail(), user.getPassword())){
+        if(authService.authenticate(userDto.getEmail(), userDto.getPassword())){
             return "redirect:/home/main";
         }
 
@@ -58,25 +64,23 @@ public class SignController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/in")
     public String showSignIn(Model model) {
-        User user = new User();
-        user.setPassword("");
-        model.addAttribute("user", user);
+        SignInUserDto signInUserDto = new SignInUserDto();
+        model.addAttribute("user", signInUserDto);
         return "user/sign-in";
     }
 
     @RequestMapping(method = RequestMethod.POST, path = {"/up/save"}, params = "action=save")
-    public String saveCustomer(@Valid @ModelAttribute("user") User user, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+    public String saveCustomer(@Valid @ModelAttribute("user") SignUpUserDto user, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
         if(bindingResult.hasErrors()){
            return "user/sign-up-edit";
         }
 
-        User savedUser = userService.add(user);
+        User savedUser = userService.add(signUpUserDtoToUser.convert(user));
 
         if(savedUser==null){
-            bindingResult.addError(new ObjectError("email", "Email already taken"));
+            bindingResult.addError(new ObjectError("user", "Email already taken"));
             user.setEmail("");
-            user.setPassword("");
             return "user/sign-up-edit";
         }
 
