@@ -51,6 +51,7 @@ public class EntertainmentController {
         return "entertainments/list";
     }
 
+
     @RequestMapping(method = RequestMethod.GET, path = "/{id}")
     public String showEntertainment(@PathVariable Integer id, Model model) {
 

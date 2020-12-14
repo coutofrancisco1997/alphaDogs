@@ -45,19 +45,21 @@ public class HomeController {
         return "home";
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = {"/home", "/", ""})
-    public String home(Model model) {
+    @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
+    public String home() {
         return "main";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = {"/about"})
-    public String aboutUs() {
+    public String aboutUs(Model model) {
+        model.addAttribute(authService.getAccessingUser());
         return "about-us";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = {"/allPartners"})
     public String allPartners(Model model) {
         model.addAttribute("entertainments", entertainmentService.list());
+        model.addAttribute(authService.getAccessingUser());
         return "allPartners";
     }
 }

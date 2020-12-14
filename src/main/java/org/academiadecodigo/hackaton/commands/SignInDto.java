@@ -2,7 +2,7 @@ package org.academiadecodigo.hackaton.commands;
 
 import javax.validation.constraints.Email;
 
-public class SignInUserDto {
+public class SignInDto {
 
     @Email
     private String email;

@@ -1,13 +1,13 @@
 package org.academiadecodigo.hackaton.converter;
 
-import org.academiadecodigo.hackaton.commands.SignInUserDto;
+import org.academiadecodigo.hackaton.commands.UserDto;
 import org.academiadecodigo.hackaton.persistence.model.User;
 import org.academiadecodigo.hackaton.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SignInUserDtoToUser {
+public class UserToUserDto {
 
     private UserService userService;
 
@@ -16,13 +16,16 @@ public class SignInUserDtoToUser {
         this.userService = userService;
     }
 
-    public User convert(SignInUserDto userDto) {
+    public UserDto convert(User user) {
 
-        User user = new User();
+        UserDto userDto = new UserDto();
 
-        user.setEmail(userDto.getEmail());
-        user.setPassword(userDto.getPassword());
+        userDto.setName(user.getName());
+        userDto.setEmail(user.getEmail());
+        userDto.setPassword(user.getPassword());
+        userDto.setPhone(user.getPhone());
 
-        return user;
+        return userDto;
     }
 }
+

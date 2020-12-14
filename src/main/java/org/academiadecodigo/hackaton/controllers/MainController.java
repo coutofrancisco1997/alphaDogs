@@ -36,7 +36,7 @@ public class MainController {
     @RequestMapping
     public String home() {
         initializeData();
-        return "redirect:/home/home";
+        return "redirect:/home";
     }
 
     private void initializeData(){

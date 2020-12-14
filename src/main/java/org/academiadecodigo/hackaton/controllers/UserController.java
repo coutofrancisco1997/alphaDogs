@@ -1,5 +1,8 @@
 package org.academiadecodigo.hackaton.controllers;
 
+import org.academiadecodigo.hackaton.commands.UserDto;
+import org.academiadecodigo.hackaton.converter.UserDtoToUser;
+import org.academiadecodigo.hackaton.converter.UserToUserDto;
 import org.academiadecodigo.hackaton.persistence.model.User;
 import org.academiadecodigo.hackaton.services.AuthService;
 import org.academiadecodigo.hackaton.services.UserService;
@@ -22,6 +25,8 @@ public class UserController {
     private AuthService authService;
     private UserService userService;
 
+    private UserToUserDto userToUserDto;
+
     @Autowired
     public void setUserService(UserService userService) {
         this.userService = userService;
@@ -32,9 +37,14 @@ public class UserController {
         this.authService = authService;
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/show")
-    public String showUser(Model model) {
-        User user = authService.getAccessingUser();
+    @Autowired
+    public void setUserToUserDto(UserToUserDto userToUserDto) {
+        this.userToUserDto = userToUserDto;
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/show/{id}")
+    public String showUser(Model model, @PathVariable Integer id) {
+        UserDto user = userToUserDto.convert(userService.get(id));
         model.addAttribute("user", user);
         return "user/show";
     }

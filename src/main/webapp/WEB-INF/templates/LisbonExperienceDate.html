@@ -118,9 +118,9 @@
                     </ul>
                     <div class="sign"style="position: absolute; right: 0">
                         <span class="navbar-text">
-
-                            <a class="btn btn-outline-secondary btn-sm" th:href="@{/home/home}" style="float: right">Sign-out</a>
-                            <a class="btn btn-outline-secondary btn-sm" th:href="@{/user/show}" style="float: right">Your Info</a>
+                            <div th:text="${'User ' + user.name}"></div>
+                            <a class="btn btn-outline-secondary btn-sm" th:href="@{/home/}" style="float: right">Sign-out</a>
+                            <a class="btn btn-outline-secondary btn-sm" th:href="@{'/user/show/' + user.id}" style="float: right">Your Info</a>
                         </span>
                     </div>
                 </div>

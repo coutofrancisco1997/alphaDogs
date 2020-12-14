@@ -1,11 +1,11 @@
 package org.academiadecodigo.hackaton.commands;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
-public class SignUpUserDto {
+public class UserDto {
 
+    @NotNull(message = "Name is mandatory")
+    @NotBlank(message = "Name is mandatory")
     @Pattern(regexp = "^\\+?[A-Z\u00C0-\u00FF][a-zA-Z\u00C0-\u00FF ]*$", message = "Name has invalid characters")
     @Size(min=3, max=64)
     private String name;
