@@ -74,13 +74,13 @@ public class UserController {
 
         authService.setAccessingUser(savedUser);
         redirectAttributes.addFlashAttribute("lastAction", "Saved " + savedUser.getName() + " ID: " + savedUser.getId());
-        return "redirect:/user/show/" + savedUser.getId();
+        return "redirect:/home/main";
 
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/edit/save", params = "action=cancel")
     public String editCancel() {
-        return "redirect:/user/show/" + authService.getAccessingUser().getId();
+        return "redirect:/home/main";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/addPacket")
