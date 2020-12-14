@@ -13,11 +13,11 @@ public class SignUpUserDto {
     @Email
     private String email;
 
+    private String password;
+
     @Pattern(regexp = "^\\+?[0-9]*$", message = "Phone has invalid characters")
     @Size(min=9, max=16)
     private String phone;
-
-    private String password;
 
     public String getName() {
         return name;

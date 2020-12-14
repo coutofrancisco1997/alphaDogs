@@ -39,6 +39,16 @@ public class SignController {
         this.userService = userService;
     }
 
+    @Autowired
+    public void setSignInUserDtoToUser(SignInUserDtoToUser signInUserDtoToUser) {
+        this.signInUserDtoToUser = signInUserDtoToUser;
+    }
+
+    @Autowired
+    public void setSignUpUserDtoToUser(SignUpUserDtoToUser signUpUserDtoToUser) {
+        this.signUpUserDtoToUser = signUpUserDtoToUser;
+    }
+
     @RequestMapping(method = RequestMethod.GET, path = "/up")
     public String signUpUser(Model model) {
         SignUpUserDto signUpUserDto = new SignUpUserDto();
