@@ -59,7 +59,7 @@ public class UserController {
     public String editUser(Model model, @PathVariable Integer id) {
         UserDto user = userToUserDto.convert(userService.get(id));
         model.addAttribute("user",user);
-        return"user/show";
+        return"user/show-edit";
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/edit/save", params = "action=save")
