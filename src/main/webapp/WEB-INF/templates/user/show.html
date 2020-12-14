@@ -73,6 +73,11 @@ body{
 .title{
     text-align: center;
 }
+
+.form{
+    padding-left: 31%;
+}
+
 </style>
 <body>
 
@@ -116,14 +121,16 @@ body{
                 </span>
 
             </div>
-        </div>
+            </div>
           </ul>
         </div>
       </nav>
     </div>
 
-<div class="container">
-    
+
+    <div class="container">
+
+    <br>
 
     <h2 th:text="${'Welcome ' + user.name}">Welcome User</h2>
 
@@ -158,6 +165,7 @@ body{
             </div>
         </form>
     </div>
+
 <!--
     <div class="row">
         <div class="col-sm-4">
@@ -179,7 +187,7 @@ body{
 -->
     <div class="row">
         <div class="col-sm-3">
-            <a class="nav-link" th:href="@{/user/signup}"><button type="button" class="btn btn-outline-secondary btn-sm">Edit</button>
+            <a class="nav-link" th:href="@{'/user/show/' + ${user.id} + '/edit'}"><button type="button" class="btn btn-outline-secondary btn-sm">Edit</button>
             <a class="nav-link" th:href="@{/packages/all}"><button type="button" class="btn btn-outline-secondary btn-sm">Choose Package</button></a>
         </div>
     </div>

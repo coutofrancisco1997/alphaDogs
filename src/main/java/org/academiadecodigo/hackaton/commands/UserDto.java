@@ -4,6 +4,8 @@ import javax.validation.constraints.*;
 
 public class UserDto {
 
+    private Integer id;
+
     @NotNull(message = "Name is mandatory")
     @NotBlank(message = "Name is mandatory")
     @Pattern(regexp = "^\\+?[A-Z\u00C0-\u00FF][a-zA-Z\u00C0-\u00FF ]*$", message = "Name has invalid characters")
@@ -18,6 +20,14 @@ public class UserDto {
     @Pattern(regexp = "^\\+?[0-9]*$", message = "Phone has invalid characters")
     @Size(min=9, max=16)
     private String phone;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;

@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,7 +25,7 @@ public class SignController {
     private UserService userService;
 
 
-    private UserDtoToUser signUpUserDtoToUser;
+    private UserDtoToUser userDtoToUser;
 
     @Autowired
     public void setAuthService(AuthService authService) {
@@ -40,8 +39,8 @@ public class SignController {
 
 
     @Autowired
-    public void setSignUpUserDtoToUser(UserDtoToUser signUpUserDtoToUser) {
-        this.signUpUserDtoToUser = signUpUserDtoToUser;
+    public void setUserDtoToUser(UserDtoToUser userDtoToUser) {
+        this.userDtoToUser = userDtoToUser;
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/up")
@@ -81,7 +80,7 @@ public class SignController {
            return "user/sign-up-edit";
         }
 
-        User savedUser = userService.add(signUpUserDtoToUser.convert(user));
+        User savedUser = userService.add(userDtoToUser.convert(user));
 
         if(savedUser==null){
             user.setEmail("");

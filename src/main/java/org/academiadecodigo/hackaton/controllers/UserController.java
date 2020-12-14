@@ -26,6 +26,7 @@ public class UserController {
     private UserService userService;
 
     private UserToUserDto userToUserDto;
+    private UserDtoToUser userDtoToUser;
 
     @Autowired
     public void setUserService(UserService userService) {
@@ -42,11 +43,42 @@ public class UserController {
         this.userToUserDto = userToUserDto;
     }
 
+    @Autowired
+    public void setUserDtoToUser(UserDtoToUser userDtoToUser) {
+        this.userDtoToUser = userDtoToUser;
+    }
+
     @RequestMapping(method = RequestMethod.GET, path = "/show/{id}")
     public String showUser(Model model, @PathVariable Integer id) {
         UserDto user = userToUserDto.convert(userService.get(id));
         model.addAttribute("user", user);
         return "user/show";
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/show/{id}/edit")
+    public String editUser(Model model, @PathVariable Integer id) {
+        UserDto user = userToUserDto.convert(userService.get(id));
+        model.addAttribute("user",user);
+        return"user/show";
+    }
+
+    @RequestMapping(method = RequestMethod.POST, path = "/edit/save", params = "action=save")
+    public String editSave(@Valid @ModelAttribute("user") UserDto user, BindingResult bindingResult) {
+
+        if(bindingResult.hasErrors()){
+            return "user/show-edit";
+        }
+
+        User savedUser = userService.add(userDtoToUser.convert(user));
+
+        authService.setAccessingUser(savedUser);
+        return "redirect:/user/show/" + savedUser.getId();
+
+    }
+
+    @RequestMapping(method = RequestMethod.POST, path = "/edit/save", params = "action=cancel")
+    public String editCancel() {
+        return "redirect:/home/main";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/addPacket")
