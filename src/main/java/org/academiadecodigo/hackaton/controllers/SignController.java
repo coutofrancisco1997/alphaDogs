@@ -68,6 +68,12 @@ public class SignController {
         }
 
         User savedUser = userService.add(user);
+
+        if(savedUser==null){
+            user.setEmail("");
+            return "user/sign-up-edit";
+        }
+
         authService.setAccessingUser(savedUser);
         redirectAttributes.addFlashAttribute("lastAction", "Saved " + savedUser.getName() + " ID: " + savedUser.getId());
         return "redirect:/home/main";

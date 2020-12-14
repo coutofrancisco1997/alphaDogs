@@ -48,14 +48,14 @@ public class MainController {
 
         User user = new User();
         user.setName("Batata");
-        user.setEmail("mail@gmail.com");
+        user.setEmail("batata@gmail.com");
         user.setPhone("5345345363");
         user.setPassword("123");
         userService.add(user);
 
         User user1 = new User();
         user1.setName("Alho");
-        user1.setEmail("mail@gmail.com");
+        user1.setEmail("alho@gmail.com");
         user1.setPhone("5345345363");
         user1.setPassword("456");
         userService.add(user1);

@@ -16,6 +16,12 @@ public class UserServiceImpl implements UserService{
     @Override
     public User add(User user){
 
+        for (User user1: list()){
+            if(user1.getEmail().equals(user.getEmail())){
+                return null;
+            }
+        }
+
         if (user.getId() == null) {
             user.setId(getNextId());
         }
@@ -41,9 +47,8 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User getByEmail(String email) {
-        List<User> userList = new ArrayList<>(userMap.values());
 
-        for (User user: userList){
+        for (User user: list()){
             if(user.getEmail().equals(email)){
                return user;
             }
