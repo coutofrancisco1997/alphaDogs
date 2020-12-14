@@ -135,7 +135,7 @@
     <h2 th:text="${'Edit ' + user.name + ' Details'}">Welcome User</h2>
 
     <div class="col-sm-8">
-        <form class="form-horizontal" th:object="${user}" th:action="@{/edit/save}" method="post">
+        <form class="form-horizontal" th:object="${user}" th:action="@{/user/edit/save}" method="post">
 
             <div class="form-group">
                 <label class="col-sm-2 control-label">Name:</label>
