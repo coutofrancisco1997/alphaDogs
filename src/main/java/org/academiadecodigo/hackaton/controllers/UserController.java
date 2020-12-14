@@ -78,7 +78,7 @@ public class UserController {
 
     @RequestMapping(method = RequestMethod.POST, path = "/edit/save", params = "action=cancel")
     public String editCancel() {
-        return "redirect:/home/main";
+        return "redirect:/user/show/" + authService.getAccessingUser().getId();
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/addPacket")
