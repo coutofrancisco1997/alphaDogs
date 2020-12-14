@@ -114,7 +114,7 @@ font-family: 'Montserrat', sans-serif;
                         <span class="navbar-text">
                             <div th:text="${'User ' + user.name}"></div>
                             <a class="btn btn-outline-secondary btn-sm" th:href="@{/home/}" style="float: right">Sign-out</a>
-                            <a class="btn btn-outline-secondary btn-sm" th:href="@{'/user/show/' + user.id}" style="float: right">Your Info</a>
+                            <a class="btn btn-outline-secondary btn-sm" th:href="@{'/user/show/' + ${user.id}}" style="float: right">Your Info</a>
                         </span>
                 </div>
             </div>
