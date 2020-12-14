@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -34,6 +35,7 @@ public class SignController {
     @RequestMapping(method = RequestMethod.GET, path = "/up")
     public String signUpUser(Model model) {
         User user = new User();
+        user.setPassword("");
         model.addAttribute("user", user);
         return "user/sign-up-edit";
     }
@@ -56,7 +58,9 @@ public class SignController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/in")
     public String showSignIn(Model model) {
-        model.addAttribute("user", new User());
+        User user = new User();
+        user.setPassword("");
+        model.addAttribute("user", user);
         return "user/sign-in";
     }
 
@@ -70,7 +74,9 @@ public class SignController {
         User savedUser = userService.add(user);
 
         if(savedUser==null){
+            bindingResult.addError(new ObjectError("email", "Email already taken"));
             user.setEmail("");
+            user.setPassword("");
             return "user/sign-up-edit";
         }
 
