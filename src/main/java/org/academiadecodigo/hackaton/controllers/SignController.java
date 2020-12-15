@@ -73,13 +73,16 @@ public class SignController {
         return "user/sign-in";
     }
 
-
     @RequestMapping(method = RequestMethod.POST, path = {"/up/save"}, params = "action=save")
     public String saveCustomer(@Valid @ModelAttribute("user") UserDto userDto, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
-        if(bindingResult.hasErrors() || userService.EmailInUse(userDto.getEmail())){
-            userDto.setEmail("");
+        if(bindingResult.hasErrors()){
            return "user/sign-up-edit";
+        }
+
+        if(userService.EmailInUse(userDto.getEmail())){
+            userDto.setEmail("");
+            return "user/sign-up-edit";
         }
 
         User savedUser = userService.add(userDtoToUser.convert(userDto));
