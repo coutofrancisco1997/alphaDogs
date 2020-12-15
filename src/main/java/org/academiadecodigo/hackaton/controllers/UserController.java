@@ -65,7 +65,7 @@ public class UserController {
             model.addAttribute("user", userDto);
             return "user/show-edit";
         }
-        return "home";
+        return "redirect:/home";
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/edit/save", params = "action=save")
