@@ -36,62 +36,92 @@ public class PackageController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/all")
     public String showAllPackages(Model model) {
-        model.addAttribute(authService.getAccessingUser());
-        return "allPackages";
+        if(authService.loggedIn()) {
+            model.addAttribute(authService.getAccessingUser());
+            return "allPackages";
+        }
+        return "redirect:/home";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/create")
     public String createPackages(Model model) {
-        model.addAttribute(authService.getAccessingUser());
-        return "ownPack";
+        if(authService.loggedIn()) {
+            model.addAttribute(authService.getAccessingUser());
+            return "ownPack";
+        }
+        return "redirect:/home";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/build/done")
     public String buildPackages(Model model) {
-        model.addAttribute(authService.getAccessingUser());
-        return "buildDone";
+        if(authService.loggedIn()) {
+            model.addAttribute(authService.getAccessingUser());
+            return "buildDone";
+        }
+        return "redirect:/home";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/eco")
     public String showEcoPackage(Model model) {
-        model.addAttribute(authService.getAccessingUser());
-        return "EcoDate";
+        if(authService.loggedIn()) {
+            model.addAttribute(authService.getAccessingUser());
+            return "EcoDate";
+        }
+        return "redirect:/home";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/bankrupt")
     public String showBankruptPackage(Model model) {
-        model.addAttribute(authService.getAccessingUser());
-        return "BankruptDate";
+        if(authService.loggedIn()) {
+            model.addAttribute(authService.getAccessingUser());
+            return "BankruptDate";
+        }
+        return "redirect:/home";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/budget")
     public String showOnABudgetPackage(Model model) {
-        model.addAttribute(authService.getAccessingUser());
-        return "BudgetDate";
+        if(authService.loggedIn()) {
+            model.addAttribute(authService.getAccessingUser());
+            return "BudgetDate";
+        }
+        return "redirect:/home";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/lisbon")
     public String showLisbonPackage(Model model) {
-        model.addAttribute(authService.getAccessingUser());
-        return "LisbonExperienceDate";
+        if(authService.loggedIn()) {
+            model.addAttribute(authService.getAccessingUser());
+            return "LisbonExperienceDate";
+        }
+        return "redirect:/home";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/covid")
     public String showCovidPackage(Model model) {
-        model.addAttribute(authService.getAccessingUser());
-        return "CovidDate";
+        if(authService.loggedIn()) {
+             model.addAttribute(authService.getAccessingUser());
+             return "CovidDate";
+        }
+        return "redirect:/home";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/drugs")
     public String showDrugsPackage(Model model) {
-        model.addAttribute(authService.getAccessingUser());
-        return "DrugDate";
+        if(authService.loggedIn()) {
+            model.addAttribute(authService.getAccessingUser());
+            return "DrugDate";
+        }
+        return "redirect:/home";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/add")
     public String addEntertainment(Model model){
-        model.addAttribute(authService.getAccessingUser());
-        return "";
+        if(authService.loggedIn()) {
+            model.addAttribute(authService.getAccessingUser());
+            return "";
+        }
+        return "redirect:/home";
     }
 
 }
