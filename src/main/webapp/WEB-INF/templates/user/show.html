@@ -136,10 +136,10 @@ body{
 
         <br>
 
-        <input type="hidden" th:field="*{user.id}"/>
-
     <div class="col-sm-8">
-        <form class="form-horizontal">
+        <form class="form-horizontal" th:object="${user}">
+
+            <input type="hidden" th:field="*{password}"/>
 
             <div class="form-group">
                 <label class="col-sm-2 control-label">Name:</label>
@@ -191,7 +191,7 @@ body{
 -->
     <div class="row">
         <div class="col-sm-3">
-            <a class="nav-link"> <!--th:href="@{'/user/show/edit'}">--><button type="button" class="btn btn-outline-secondary btn-sm">Edit</button>
+            <a class="nav-link" th:href="@{/user/show/edit}"><button type="button" class="btn btn-outline-secondary btn-sm">Edit</button>
             <a class="nav-link" th:href="@{/packages/all}"><button type="button" class="btn btn-outline-secondary btn-sm">Choose Package</button></a>
         </div>
     </div>
