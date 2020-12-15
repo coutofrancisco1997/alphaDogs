@@ -1,17 +1,17 @@
 package org.academiadecodigo.hackaton.services;
 
-import org.academiadecodigo.hackaton.persistence.model.Pact;
+import org.academiadecodigo.hackaton.persistence.model.Pacote;
 
 import java.util.List;
 
 public interface PackageService {
 
-    Pact get(Integer id);
+    Pacote get(Integer id);
 
-    List<Pact> list();
+    List<Pacote> list();
 
     void delete(Integer id);
 
-    void add(Pact aPackage);
+    void add(Pacote aPackage);
 
 }
