@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,7 +26,6 @@ public class SignController {
 
     private AuthService authService;
     private UserService userService;
-
 
     private UserDtoToUser userDtoToUser;
 
@@ -82,6 +82,7 @@ public class SignController {
         }
 
         if(userService.EmailInUse(userDto.getEmail())){
+            bindingResult.addError(new ObjectError("email", "Email already in Use"));
             userDto.setEmail("");
             return "user/sign-up-edit";
         }
