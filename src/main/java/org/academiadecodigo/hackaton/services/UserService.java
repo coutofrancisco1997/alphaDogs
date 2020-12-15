@@ -16,4 +16,6 @@ public interface UserService {
 
     User getByEmail(String email);
 
+    boolean EmailInUse(String email);
+
 }

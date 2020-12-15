@@ -8,7 +8,6 @@ import javax.validation.constraints.*;
 @Table(name = "user")
 public class User extends AbstractModel{
 
-
     private String name;
     private String email;
     private String phone;
