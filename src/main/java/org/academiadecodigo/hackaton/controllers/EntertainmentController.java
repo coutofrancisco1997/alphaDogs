@@ -21,6 +21,15 @@ public class EntertainmentController {
         this.entertainmentService = entertainmentService;
     }
 
+    @RequestMapping(method = RequestMethod.GET, path = "/{id}")
+    public String showEntertainment(@PathVariable Integer id, Model model) {
+
+        Entertainment entertainment = entertainmentService.get(id);
+        model.addAttribute("entertainment", entertainment);
+        return "entertainment/show";
+    }
+
+    /*
     @RequestMapping(method = RequestMethod.GET, path = {"/list/restaurant"})
     public String listRestaurant(Model model) {
         model.addAttribute("entertainments", entertainmentService.listByType(EntertainmentType.RESTAURANT));
@@ -49,14 +58,6 @@ public class EntertainmentController {
     public String listCrazy(Model model) {
         model.addAttribute("entertainments", entertainmentService.listByType(EntertainmentType.CRAZY));
         return "entertainments/list";
-    }
+    }*/
 
-
-    @RequestMapping(method = RequestMethod.GET, path = "/{id}")
-    public String showEntertainment(@PathVariable Integer id, Model model) {
-
-        Entertainment entertainment = entertainmentService.get(id);
-        model.addAttribute("entertainment", entertainment);
-        return "entertainment/show";
-    }
 }

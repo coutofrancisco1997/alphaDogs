@@ -9,7 +9,7 @@ public class UserDto {
     @NotNull(message = "Name is mandatory")
     @NotBlank(message = "Name is mandatory")
     @Pattern(regexp = "^\\+?[A-Z\u00C0-\u00FF][a-zA-Z\u00C0-\u00FF ]*$", message = "Name has invalid characters")
-    @Size(min=3, max=64)
+    @Size(min=3, max=64, message = "Between 3 and 64 chars")
     private String name;
 
     @Email
@@ -17,8 +17,8 @@ public class UserDto {
 
     private String password;
 
-    @Pattern(regexp = "^\\+?[0-9]*$", message = "Phone has invalid characters")
-    @Size(min=9, max=16)
+    @Pattern(regexp = "^\\+?[9][1236][0-9]*$", message = "Phone has invalid characters, prefix 9[1236]")
+    @Size(min=9, max=16, message = "Between 9 and 16 numbers")
     private String phone;
 
     public Integer getId() {
