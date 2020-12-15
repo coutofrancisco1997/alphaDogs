@@ -100,6 +100,12 @@ public class SignController {
         return "redirect:/user/sign-up-edit";
     }
 
+    @RequestMapping(method = RequestMethod.GET, path = "/out")
+    public String signOut(Model model) {
+        authService.signOut();
+        return "redirect:/home";
+    }
+
 
 
 }
