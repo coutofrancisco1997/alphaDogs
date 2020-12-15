@@ -137,7 +137,7 @@
 
     <br>
 
-    <input type="hidden" th:field="*{id}"/>
+    <input type="hidden" th:field="*{user.id}"/>
 
     <div class="col-sm-8">
         <form class="form-horizontal" th:object="${user}" th:action="@{'/user/edit/save'}" method="post">
