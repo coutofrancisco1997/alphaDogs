@@ -15,6 +15,7 @@ public class UserDto {
     @Email
     private String email;
 
+    @Size(min=3, max=64, message = "Pass must Between 3 and 64")
     private String password;
 
     @Pattern(regexp = "^\\+?[9][1236][0-9]*$", message = "Phone has invalid characters, prefix 9[1236]")
