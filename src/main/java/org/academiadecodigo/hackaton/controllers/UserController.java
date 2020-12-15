@@ -62,14 +62,14 @@ public class UserController {
         return "user/show-edit";
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = "/edit/save", params = "action=save")
-    public String editSave(@Valid @ModelAttribute("user") UserDto userDto, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+    @RequestMapping(method = RequestMethod.POST, path = "/edit/{id}/save", params = "action=save")
+    public String editSave(@Valid @ModelAttribute("user") UserDto userDto, BindingResult bindingResult, RedirectAttributes redirectAttributes, @PathVariable Integer id) {
 
         if(bindingResult.hasErrors()){
             return "user/show-edit";
         }
 
-        userService.delete(userDto.getId());
+        userService.delete(id);
         User savedUser = userService.add(userDtoToUser.convert(userDto));
 
         authService.setAccessingUser(savedUser);

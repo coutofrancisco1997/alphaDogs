@@ -133,10 +133,12 @@
     <br>
 
     <h2 th:text="${'Edit ' + user.name + ' Details'}">Edit Details</h2>
-    <h2 th:text="${'User Id: ' + user.id}">User Id</h2>
+    <h5 th:text="${'Id: ' + user.id}">User Id</h5>
+
+    <br>
 
     <div class="col-sm-8">
-        <form class="form-horizontal" th:object="${user}" th:action="@{/user/edit/save}" method="post">
+        <form class="form-horizontal" th:object="${user}" th:action="@{'/user/edit/'+ ${user.id} + '/save'}" method="post">
 
             <div class="form-group">
                 <label class="col-sm-2 control-label">Name:</label>
