@@ -55,7 +55,7 @@ public class UserController {
             model.addAttribute("user", userDto);
             return "user/show";
         }
-        return "home";
+        return "redirect:/home";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/edit")
