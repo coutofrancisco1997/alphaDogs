@@ -53,14 +53,20 @@ public class HomeController {
 
     @RequestMapping(method = RequestMethod.GET, path = {"/about"})
     public String aboutUs(Model model) {
-        model.addAttribute(authService.getAccessingUser());
-        return "about-us";
+        if(authService.loggedIn()) {
+            model.addAttribute(authService.getAccessingUser());
+            return "about-us";
+        }
+        return "redirect:/home";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = {"/allPartners"})
     public String allPartners(Model model) {
-        model.addAttribute("entertainments", entertainmentService.list());
-        model.addAttribute(authService.getAccessingUser());
-        return "allPartners";
+        if(authService.loggedIn()) {
+            model.addAttribute("entertainments", entertainmentService.list());
+            model.addAttribute(authService.getAccessingUser());
+            return "allPartners";
+        }
+        return "redirect:/home";
     }
 }

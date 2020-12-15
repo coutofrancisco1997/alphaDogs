@@ -75,7 +75,6 @@ public class UserController {
             return "user/show-edit";
         }
 
-        //userService.delete(userDto.getId());
         User savedUser = userService.add(userDtoToUser.convert(userDto));
 
         authService.setAccessingUser(savedUser);
