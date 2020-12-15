@@ -52,11 +52,7 @@ public class HomeController {
 
     @RequestMapping(method = RequestMethod.GET, path = {"/about"})
     public String aboutUs(Model model) {
-        if(authService.loggedIn()) {
-            model.addAttribute(authService.getAccessingUser());
-            return "about-us";
-        }
-        return "redirect:/home";
+        return "about-us";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = {"/allPartners"})
