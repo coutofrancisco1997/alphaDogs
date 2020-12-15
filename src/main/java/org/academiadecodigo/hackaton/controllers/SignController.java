@@ -89,7 +89,7 @@ public class SignController {
 
         authService.setAccessingUser(savedUser);
         redirectAttributes.addFlashAttribute("lastAction", "Saved " + savedUser.getName() + " ID: " + savedUser.getId());
-        return "redirect:/home/main";
+        return "redirect:/sign/in";
     }
 
 
