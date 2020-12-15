@@ -14,7 +14,6 @@ public class AuthServiceImpl implements AuthService {
 
     private UserService userService;
     private User accessingUser;
-    private boolean loggedIn = false;
 
     /**
      * Sets the customer service
@@ -33,7 +32,6 @@ public class AuthServiceImpl implements AuthService {
         String pass = Security.getHash(password);
 
         if(user!=null && user.getPassword().equals(pass)){
-            loggedIn = true;
             accessingUser = user;
             return true;
         }
@@ -51,7 +49,7 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public void signOut() {
-        loggedIn = false;
+        accessingUser = null;
     }
 
     @Override
@@ -61,6 +59,6 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public boolean loggedIn() {
-        return loggedIn;
+        return accessingUser != null;
     }
 }
