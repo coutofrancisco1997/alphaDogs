@@ -81,7 +81,6 @@ public class UserController {
         authService.setAccessingUser(savedUser);
         redirectAttributes.addFlashAttribute("lastAction", "Saved " + savedUser.getName() + " ID: " + savedUser.getId());
         return "redirect:/home/main";
-
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/edit/save", params = "action=cancel")

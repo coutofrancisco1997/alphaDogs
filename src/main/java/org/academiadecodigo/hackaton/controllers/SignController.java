@@ -82,7 +82,6 @@ public class SignController {
         }
 
         if(userService.EmailInUse(userDto.getEmail())){
-            bindingResult.addError(new ObjectError("email", "Email already in Use"));
             userDto.setEmail("");
             return "user/sign-up-edit";
         }
