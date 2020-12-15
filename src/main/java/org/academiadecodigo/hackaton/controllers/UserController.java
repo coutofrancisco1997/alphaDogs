@@ -49,15 +49,15 @@ public class UserController {
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/show")
-    public String showUser(@ModelAttribute("user") User user, Model model) {
-        UserDto userDto = userToUserDto.convert(user);
+    public String showUser(Model model) {
+        UserDto userDto = userToUserDto.convert(authService.getAccessingUser());
         model.addAttribute("user", userDto);
         return "user/show";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/edit")
-    public String editUser(Model model, @PathVariable Integer id) {
-        UserDto userDto = userToUserDto.convert(userService.get(id));
+    public String editUser(Model model) {
+        UserDto userDto = userToUserDto.convert(authService.getAccessingUser());
         model.addAttribute("user", userDto);
         return "user/show-edit";
     }
