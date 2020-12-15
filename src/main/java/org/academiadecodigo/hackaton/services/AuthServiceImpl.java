@@ -2,6 +2,7 @@ package org.academiadecodigo.hackaton.services;
 
 import org.academiadecodigo.hackaton.persistence.model.User;
 
+import org.academiadecodigo.hackaton.utils.Security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,11 +29,14 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public boolean authenticate(String email, String password) {
 
-        if(userService.getByEmail(email)!=null && userService.getByEmail(email).getPassword().equals(password)){
-            accessingUser = userService.getByEmail(email);
+        User user = userService.getByEmail(email);
+        String pass = Security.getHash(password);
+
+        if(user!=null && user.getPassword().equals(pass)){
+            loggedIn = true;
+            accessingUser = user;
             return true;
         }
-
         return false;
     }
 
@@ -46,11 +50,17 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public void signOut() {
-        accessingUser=null;
+        loggedIn = false;
+        accessingUser = null;
     }
 
     @Override
     public void setAccessingUser(User user) {
         accessingUser=user;
+    }
+
+    @Override
+    public boolean loggedIn() {
+        return loggedIn;
     }
 }

@@ -6,6 +6,7 @@ import org.academiadecodigo.hackaton.converter.UserDtoToUser;
 import org.academiadecodigo.hackaton.persistence.model.User;
 import org.academiadecodigo.hackaton.services.AuthService;
 import org.academiadecodigo.hackaton.services.UserService;
+import org.academiadecodigo.hackaton.utils.Security;
 import org.academiadecodigo.hackaton.utils.SecurityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,7 +25,6 @@ public class SignController {
 
     private AuthService authService;
     private UserService userService;
-    private SecurityService securityService;
 
 
     private UserDtoToUser userDtoToUser;
@@ -37,11 +37,6 @@ public class SignController {
     @Autowired
     public void setUserService(UserService userService) {
         this.userService = userService;
-    }
-
-    @Autowired
-    public void setSecurityService(SecurityService securityService) {
-        this.securityService = securityService;
     }
 
     @Autowired
@@ -68,7 +63,7 @@ public class SignController {
 
     @RequestMapping(method = RequestMethod.POST, path = {"/in/auth"}, params = "action=cancel")
     public String cancelSignIn() {
-        return "redirect:/home/home";
+        return "redirect:/home";
     }
 
 
@@ -91,6 +86,7 @@ public class SignController {
             return "user/sign-up-edit";
         }
 
+        userDto.setPassword(Security.getHash(userDto.getPassword()));
         User savedUser = userService.add(userDtoToUser.convert(userDto));
 
         authService.setAccessingUser(savedUser);

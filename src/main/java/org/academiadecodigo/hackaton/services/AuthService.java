@@ -26,4 +26,6 @@ public interface AuthService {
     void signOut();
 
     void setAccessingUser(User user);
+
+    boolean loggedIn();
 }
