@@ -6,6 +6,7 @@ import org.academiadecodigo.hackaton.converter.UserDtoToUser;
 import org.academiadecodigo.hackaton.persistence.model.User;
 import org.academiadecodigo.hackaton.services.AuthService;
 import org.academiadecodigo.hackaton.services.UserService;
+import org.academiadecodigo.hackaton.utils.SecurityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +24,7 @@ public class SignController {
 
     private AuthService authService;
     private UserService userService;
+    private SecurityService securityService;
 
 
     private UserDtoToUser userDtoToUser;
@@ -37,6 +39,10 @@ public class SignController {
         this.userService = userService;
     }
 
+    @Autowired
+    public void setSecurityService(SecurityService securityService) {
+        this.securityService = securityService;
+    }
 
     @Autowired
     public void setUserDtoToUser(UserDtoToUser userDtoToUser) {
