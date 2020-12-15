@@ -59,7 +59,7 @@ public class UserController {
     public String editUser(Model model, @PathVariable Integer id) {
         UserDto userDto = userToUserDto.convert(userService.get(id));
         model.addAttribute("user", userDto);
-        return"user/show-edit";
+        return "";
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/edit/save", params = "action=save")
@@ -69,6 +69,7 @@ public class UserController {
             return "user/show-edit";
         }
 
+        userService.delete(userDto.getId());
         User savedUser = userService.add(userDtoToUser.convert(userDto));
 
         authService.setAccessingUser(savedUser);
