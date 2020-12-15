@@ -48,21 +48,21 @@ public class UserController {
         this.userDtoToUser = userDtoToUser;
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/show/{id}")
-    public String showUser(Model model, @PathVariable Integer id) {
-        UserDto userDto = userToUserDto.convert(userService.get(id));
+    @RequestMapping(method = RequestMethod.GET, path = "/show")
+    public String showUser(@ModelAttribute("user") User user, Model model) {
+        UserDto userDto = userToUserDto.convert(user);
         model.addAttribute("user", userDto);
         return "user/show";
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/show/{id}/edit")
+    @RequestMapping(method = RequestMethod.GET, path = "/edit")
     public String editUser(Model model, @PathVariable Integer id) {
         UserDto userDto = userToUserDto.convert(userService.get(id));
         model.addAttribute("user", userDto);
         return "user/show-edit";
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = "/edit/{id}/save", params = "action=save")
+    @RequestMapping(method = RequestMethod.POST, path = "/edit/save", params = "action=save")
     public String editSave(@Valid @ModelAttribute("user") UserDto userDto, BindingResult bindingResult, RedirectAttributes redirectAttributes, @PathVariable Integer id) {
 
         if(bindingResult.hasErrors()){
