@@ -2,6 +2,7 @@ package org.academiadecodigo.hackaton.services;
 
 import org.academiadecodigo.hackaton.persistence.dao.UserDao;
 import org.academiadecodigo.hackaton.persistence.model.User;
+import org.academiadecodigo.hackaton.utils.Security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -74,14 +75,14 @@ public class UserServiceImpl implements UserService{
         user.setName("Batata");
         user.setEmail("batata@gmail.com");
         user.setPhone("5345345363");
-        user.setPassword("123");
+        user.setPassword(Security.getHash("123"));
         add(user);
 
         User user1 = new User();
         user1.setName("Alho");
         user1.setEmail("alho@gmail.com");
-        user1.setPhone("5345345363");
-        user1.setPassword("456");
+        user1.setPhone("905345363");
+        user1.setPassword(Security.getHash("456"));
         add(user1);
     }
 }

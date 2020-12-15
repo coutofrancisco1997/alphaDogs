@@ -50,16 +50,22 @@ public class UserController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/show")
     public String showUser(Model model) {
-        UserDto userDto = userToUserDto.convert(authService.getAccessingUser());
-        model.addAttribute("user", userDto);
-        return "user/show";
+        if(authService.loggedIn()) {
+            UserDto userDto = userToUserDto.convert(authService.getAccessingUser());
+            model.addAttribute("user", userDto);
+            return "user/show";
+        }
+        return "home";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/edit")
     public String editUser(Model model) {
-        UserDto userDto = userToUserDto.convert(authService.getAccessingUser());
-        model.addAttribute("user", userDto);
-        return "user/show-edit";
+        if(authService.loggedIn()) {
+            UserDto userDto = userToUserDto.convert(authService.getAccessingUser());
+            model.addAttribute("user", userDto);
+            return "user/show-edit";
+        }
+        return "home";
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/edit/save", params = "action=save")
