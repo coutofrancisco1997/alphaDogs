@@ -13,6 +13,10 @@ public class UserServiceImpl implements UserService{
 
     private Map<Integer, User> userMap = new HashMap<>();
 
+    public UserServiceImpl(){
+        initializeTestUsers();
+    }
+
     @Override
     public User add(User user){
 
@@ -63,5 +67,21 @@ public class UserServiceImpl implements UserService{
 
     private Integer getNextId() {
         return userMap.isEmpty() ? 1 : Collections.max(userMap.keySet()) + 1;
+    }
+
+    private void initializeTestUsers(){
+        User user = new User();
+        user.setName("Batata");
+        user.setEmail("batata@gmail.com");
+        user.setPhone("5345345363");
+        user.setPassword("123");
+        add(user);
+
+        User user1 = new User();
+        user1.setName("Alho");
+        user1.setEmail("alho@gmail.com");
+        user1.setPhone("5345345363");
+        user1.setPassword("456");
+        add(user1);
     }
 }

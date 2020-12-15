@@ -46,7 +46,7 @@ public class MainController {
         }
         dataInitialized=true;
 
-        User user = new User();
+        /*User user = new User();
         user.setName("Batata");
         user.setEmail("batata@gmail.com");
         user.setPhone("5345345363");
@@ -58,7 +58,7 @@ public class MainController {
         user1.setEmail("alho@gmail.com");
         user1.setPhone("5345345363");
         user1.setPassword("456");
-        userService.add(user1);
+        userService.add(user1);*/
 
         Entertainment loco = new Restaurant();
         loco.setName("Loco");
