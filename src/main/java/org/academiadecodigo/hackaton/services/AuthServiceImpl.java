@@ -13,6 +13,7 @@ public class AuthServiceImpl implements AuthService {
 
     private UserService userService;
     private User accessingUser;
+    private boolean loggedIn = false;
 
     /**
      * Sets the customer service
