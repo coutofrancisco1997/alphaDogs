@@ -60,12 +60,9 @@ public class UserController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/edit")
     public String editUser(Model model) {
-        if(authService.loggedIn()) {
             UserDto userDto = userToUserDto.convert(authService.getAccessingUser());
             model.addAttribute("user", userDto);
             return "user/show-edit";
-        }
-        return "redirect:/home";
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/edit/save", params = "action=save")

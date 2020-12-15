@@ -37,7 +37,7 @@ public class AuthServiceImpl implements AuthService {
             accessingUser = user;
             return true;
         }
-        
+
         return false;
     }
 
